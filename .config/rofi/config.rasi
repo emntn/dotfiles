@@ -1,0 +1,14 @@
+configuration {
+	modi: "window,run,drun";
+	font: "JetBrains mono 16";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+@theme "freshdark"

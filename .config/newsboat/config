@@ -1,0 +1,48 @@
+# Newsboat colour scheme to work with the Gruvbox palette
+# Inspired by the vim theme https://github.com/morhetz/gruvbox
+# Tested with the Kitty gruvbox terminal colour scheme
+# https://github.com/wdomitrz/kitty-gruvbox-theme
+
+color background          color15    color0
+color listnormal          color15    color0
+color listnormal_unread   color2     color0
+color listfocus           color4     color0
+color listfocus_unread    color4     color0
+color info                color8     color0
+color article             color15    color0
+highlight feedlist "###.*###" color3 default bold
+highlight feedlist ".*0/0.." default default invis
+
+# highlights
+highlight article "^(Feed|Link):.*$" color8 default bold
+highlight article "^(Title|Date|Author):.*$" color8 default bold
+highlight article "https?://[^ ]+" color5 default underline
+highlight article "\\[[0-9]+\\]" color5 default bold
+highlight article "\\[image\\ [0-9]+\\]" color5 default bold
+highlight feedlist "^─.*$" color6 color6 bold
+
+# unbind keys
+#unbind-key ENTER
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+
+# bind keys - vim style
+bind-key j down
+bind-key k up
+#bind-key ; open
+#bind-key j quit
+
+# Other
+auto-reload yes
+reload-threads 100
+
+# Macro
+bind-key BACKSPACE macro-prefix
+unbind-key ,
+
+# Browser behavior
+browser "firefox %u"
+bind-key o open-in-browser-and-mark-read
+macro o set browser firefox; open-in-browser-and-mark-read; set browser lynx
