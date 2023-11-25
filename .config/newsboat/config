@@ -3,23 +3,23 @@
 # Tested with the Kitty gruvbox terminal colour scheme
 # https://github.com/wdomitrz/kitty-gruvbox-theme
 
-color background          color15    color0
-color listnormal          color15    color0
-color listnormal_unread   color2     color0
-color listfocus           color4     color0
-color listfocus_unread    color4     color0
-color info                color8     color0
-color article             color15    color0
-highlight feedlist "###.*###" color3 default bold
+color background          default    default
+color listnormal          default    default
+color listnormal_unread   color10    default
+color listfocus           color12    default
+color listfocus_unread    color12    default
+color info                color8     default
+color article             default    default
+highlight feedlist "===.*===" color11 default bold
 highlight feedlist ".*0/0.." default default invis
 
 # highlights
 highlight article "^(Feed|Link):.*$" color8 default bold
 highlight article "^(Title|Date|Author):.*$" color8 default bold
-highlight article "https?://[^ ]+" color5 default underline
-highlight article "\\[[0-9]+\\]" color5 default bold
-highlight article "\\[image\\ [0-9]+\\]" color5 default bold
-highlight feedlist "^─.*$" color6 color6 bold
+highlight article "https?://[^ ]+" color13 default underline
+highlight article "\\[[0-9]+\\]" color13 default bold
+highlight article "\\[image\\ [0-9]+\\]" color13 default bold
+highlight feedlist "^─.*$" color4 color4 bold
 
 # unbind keys
 #unbind-key ENTER
