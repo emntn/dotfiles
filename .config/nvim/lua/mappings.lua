@@ -81,3 +81,6 @@ end
 vim.cmd([[
   autocmd FileType markdown nnoremap <silent> <buffer> <leader>x :lua ToggleTodo()<CR>
 ]])
+
+-- Make "Y" yank till the end of line
+nmap('Y', 'y$')
