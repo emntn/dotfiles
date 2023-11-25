@@ -70,22 +70,44 @@ return {
   },
 
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "rebelot/kanagawa.nvim",
     config = function()
-      require("catppuccin").setup({
-        flavour = "mocha", -- latte, frappe, macchiato, mocha
-        background = {
-          light = "latte",
-          dark = "mocha",
+      require('kanagawa').setup({
+        statementStyle = { bold = false },
+        transparent = true,
+        colors = {
+          palette = { dragonWhite = "#ada795" },
         },
-        transparent_background = false,
-        integrations = {
-          cmp = true,
-          telescope = true,
+        overrides = function(colors) -- add/modify highlights
+          local theme = colors.theme
+          return {
+            Pmenu                          = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
+            PmenuSel                       = { fg = "none", bg = theme.ui.bg_p2 },
+            PmenuSbar                      = { bg = theme.ui.bg_m1 },
+            PmenuThumb                     = { bg = theme.ui.bg_p2 },
+            LspInlayHint                   = { bg = "none", fg = theme.ui.nontext },
+            CursorLineNr                   = { fg = theme.ui.fg, bg = theme.ui.bg_gutter, bold = false },
+            FloatBorder                    = { fg = theme.diag.info, bg = "none" },
+            NoiceCmdlineIcon               = { fg = theme.diag.info, bg = "none" },
+            NoiceCmdlineIconInput          = { fg = theme.diag.info, bg = "none" },
+            NoiceCmdlineIconSearch         = { fg = theme.diag.warning, bg = "none" },
+            NoiceCmdlinePopupBorder        = { fg = theme.diag.info, bg = "none" },
+            NoiceCmdlinePopupBorderSearch  = { fg = theme.diag.warning, bg = "none" },
+            NoiceCmdlinePopupTitle         = { fg = theme.diag.info, bg = "none" },
+            NoiceConfirmBorder             = { fg = theme.diag.info, bg = "none" },
+            NoiceCmdlinePopup              = { fg = theme.diag.info, bg = "none" },
+            NoiceCmdlinePopupBorderCmdline = { fg = theme.diag.info, bg = "none" },
+          }
+        end,
+        theme = "dragon",
+        background = {
+          dark = "dragon",
         },
       })
-    end,
+
+      -- setup must be called before loading
+      vim.cmd("colorscheme kanagawa")
+    end
   },
 
   {
