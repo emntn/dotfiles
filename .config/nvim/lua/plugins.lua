@@ -76,16 +76,16 @@ return {
         statementStyle = { bold = false },
         transparent = true,
         colors = {
-          palette = { dragonWhite = "#ada795" },
+          palette = { dragonWhite = "#a69f94" },
         },
         overrides = function(colors) -- add/modify highlights
           local theme = colors.theme
           return {
+            -- UI
             Pmenu                          = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
             PmenuSel                       = { fg = "none", bg = theme.ui.bg_p2 },
             PmenuSbar                      = { bg = theme.ui.bg_m1 },
             PmenuThumb                     = { bg = theme.ui.bg_p2 },
-            LspInlayHint                   = { bg = "none", fg = theme.ui.nontext },
             CursorLineNr                   = { fg = theme.ui.fg, bg = theme.ui.bg_gutter, bold = false },
             FloatBorder                    = { fg = theme.diag.info, bg = "none" },
             NoiceCmdlineIcon               = { fg = theme.diag.info, bg = "none" },
@@ -97,6 +97,12 @@ return {
             NoiceConfirmBorder             = { fg = theme.diag.info, bg = "none" },
             NoiceCmdlinePopup              = { fg = theme.diag.info, bg = "none" },
             NoiceCmdlinePopupBorderCmdline = { fg = theme.diag.info, bg = "none" },
+            -- Syntax
+            LspInlayHint                   = { bg = "none", fg = theme.syn.comment },
+            Comment                        = { bg = "none", fg = theme.ui.nontext },
+            Boolean                        = { fg = theme.syn.constant, bold = false },
+            ["@keyword.operator"]          = { fg = theme.syn.operator, bold = false },
+            ["@string.escape"]             = { fg = theme.syn.regex, bold = false },
           }
         end,
         theme = "dragon",
