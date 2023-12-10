@@ -31,7 +31,7 @@ wed="## $(date --date="next Wednesday" +"%a %d-%m-%Y")\n\n"
 thu="## $(date --date="next Thursday" +"%a %d-%m-%Y")\n\n"
 fri="## $(date --date="next Friday" +"%a %d-%m-%Y")\n\n"
 sat="## $(date --date="next Saturday" +"%a %d-%m-%Y")\n\n"
-sun="## $(date --date="next Sunday" +"%a %d-%m-%Y")\n\n- [ ] Weekly journal\n"
+sun="## $(date --date="next Sunday" +"%a %d-%m-%Y")\n\n- [ ] Weekly journal"
 weekdays=("$mon" "$tue" "$wed" "$thu" "$fri" "$sat" "$sun")
 
 # whole path to file
@@ -57,6 +57,7 @@ if [ $today == "Monday" ]; then
         printf "${weekdays[index]}\n\n" >> $journal_path
       fi
     done
+    printf "## Next week\n\n\n\n" >> $journal_path
     nvim $journal_path;
   fi
 elif [ $today != "Monday" ]; then
