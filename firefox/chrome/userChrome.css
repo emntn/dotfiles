@@ -23,7 +23,7 @@
 
 tab:not([selected="true"]) {
   background-color: #000000 !important;
-  color: #ada795 !important;
+  color: #a69f94 !important;
 }
 
 /* tab font */
@@ -47,7 +47,7 @@ tab {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   background-color: #000000 !important;
-  color: #ada795 !important;
+  color: #a69f94 !important;
   border-color: #000000 !important;
 }
 
@@ -55,7 +55,7 @@ tab {
 
 #tabbrowser-tabs .tabbrowser-tab[selected] .tab-content {
   background: #000000 !important;
-  color: #ada795 !important;
+  color: #a69f94 !important;
 }
 
 #tabbrowser-tabs .tabbrowser-tab:not([selected]) .tab-content {
@@ -66,7 +66,7 @@ tab {
 /* Tab: hovered colors */
 #tabbrowser-tabs .tabbrowser-tab:hover:not([selected]) .tab-content {
   background: #000000 !important;
-  color: #ada795 !important;
+  color: #a69f94 !important;
 }
 
 /*AGENT_SHEET*/
@@ -79,7 +79,7 @@ tab {
 #PanelUI-menu-button,
 #unified-extensions-button {
   background: #000000 !important;
-  fill: #ada795 !important;
+  fill: #a69f94 !important;
   fill-opacity: 1.0 !important;
   opacity: 0.8 !important;
 }
@@ -104,14 +104,14 @@ tab {
 #tabs-newtab-button,
 .tab-close-button,
 .tab-icon-image,
-#star-button, 
+#star-button,
 #reader-mode-button,
 #alltabs-button {
-  display:none!important;
+  display: none !important;
 }
 
 /* remove tab shadow */
-.tabbrowser-tab >.tab-stack > .tab-background {
+.tabbrowser-tab>.tab-stack>.tab-background {
   box-shadow: none !important;
 }
 
@@ -122,12 +122,15 @@ window,
 #PersonalToolbar,
 #navigator-toolbox,
 #sidebar-box,
-#nav-bar {
+#nav-bar,
+menubar,
+toolbar,
+nav-bar {
 
-    -moz-appearance: none !important;
+  -moz-appearance: none !important;
 
-    border: none !important;
-    box-shadow: none !important;
-    background: #000000 !important;
-
+  border: none !important;
+  box-shadow: none !important;
+  background: #000000 !important;
+  color: #a69f94 !important;
 }
