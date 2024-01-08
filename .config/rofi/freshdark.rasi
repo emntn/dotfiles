@@ -1,24 +1,18 @@
-/*******************************************************************************
- * ROFI Color theme
- * User: emilrwx
- * Copyright: emilrwx
- *******************************************************************************/
-
 * {
-    selected-normal-foreground:  #fabd2f;
-    foreground:                  #ebdbb2;
+    selected-normal-foreground:  #d8a657;
+    foreground:                  #d4be98;
     normal-foreground:           @foreground;
     alternate-normal-background: @background;
-    red:                         #fb4934;
+    red:                         #ea6962;
     selected-urgent-foreground:  rgba ( 255, 24, 68, 100 % );
-    blue:                        #83a598;
+    blue:                        #7daea3;
     urgent-foreground:           rgba ( 255, 24, 68, 100 % );
     alternate-urgent-background: rgba ( 39, 50, 56, 100 % );
     active-foreground:           @red;
     lightbg:                     rgba ( 238, 232, 213, 100 % );
     selected-active-foreground:  @blue;
     alternate-active-background: @background;
-    background:                  #000000;
+    background:                  #101010;
     bordercolor:                 #44443a;
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
