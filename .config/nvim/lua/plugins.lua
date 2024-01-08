@@ -8,24 +8,14 @@ return {
     config = function()
       vim.cmd [[
         function! s:gruvbox_material_custom() abort
-            highlight! link TSString String
-            highlight! link CocSymbolString String
-            highlight! link javascriptPropertyNameString String
-            highlight! link typescriptStringProperty String
-            highlight! link cmakeKWstring String
             highlight! link mkdHeading Yellow
             highlight! link mkdListItem Fg
             highlight! link mkdBold Fg
             highlight! link mkdCodeDelimiter Green
             highlight! link mkdListItemCheckbox Fg
-            highlight! link TSType BlueItalic
-            highlight! link TSTypeBuiltin BlueItalic
-            highlight! link TSTypeDefinition BlueItalic
-            highlight! link TSNamespace PurpleItalic
 
-            let l:palette = gruvbox_material#get_palette('hard', 'original', {})
+            let l:palette = gruvbox_material#get_palette('hard', 'material', {})
 
-            call gruvbox_material#highlight('String', l:palette.yellow, l:palette.none)
             call gruvbox_material#highlight('markdownH1', l:palette.yellow, l:palette.none, 'bold')
             call gruvbox_material#highlight('markdownH2', l:palette.yellow, l:palette.none, 'bold')
             call gruvbox_material#highlight('markdownH3', l:palette.yellow, l:palette.none, 'bold')
@@ -55,13 +45,13 @@ return {
       ]]
       vim.opt.background = 'dark'
       vim.g.gruvbox_material_background = 'hard'
-      vim.g.gruvbox_material_foreground = 'original'
+      vim.g.gruvbox_material_foreground = 'material'
       vim.g.gruvbox_material_transparent_background = 2
       vim.g.gruvbox_material_diagnostic_line_highlight = 1
       vim.g.gruvbox_material_diagnostic_virtual_text = 'highlighted'
       vim.g.gruvbox_material_diagnostic_text_highlight = 1
       vim.g.gruvbox_material_spell_foreground = 'colored'
-      vim.g.gruvbox_material_enable_italic = 1
+      vim.g.gruvbox_material_enable_italic = 0
       vim.g.gruvbox_material_enable_bold = 0
       vim.g.gruvbox_material_disable_terminal_colors = 1
       vim.g.gruvbox_material_float_style = 'dim'
@@ -77,6 +67,13 @@ return {
         transparent = true,
         colors = {
           palette = { dragonWhite = "#a69f94" },
+          theme = {
+            all = {
+              ui = {
+                bg_gutter = "none"
+              }
+            }
+          }
         },
         overrides = function(colors) -- add/modify highlights
           local theme = colors.theme
@@ -86,10 +83,17 @@ return {
             PmenuSel                       = { fg = "none", bg = theme.ui.bg_p2 },
             PmenuSbar                      = { bg = theme.ui.bg_m1 },
             PmenuThumb                     = { bg = theme.ui.bg_p2 },
-            CursorLineNr                   = { fg = theme.ui.fg, bg = theme.ui.bg_gutter, bold = false },
-            FloatBorder                    = { fg = theme.diag.info, bg = "none" },
-            NoiceCmdlineIcon               = { fg = theme.diag.info, bg = "none" },
-            NoiceCmdlineIconInput          = { fg = theme.diag.info, bg = "none" },
+            CursorLineNr                   = { fg = theme.ui.nontext, bg = theme.ui.bg_gutter, bold = true },
+            FloatBorder                    = { fg = theme.ui.nontext, bg = "none" },
+            FloatTitle                     = { bg = "none" },
+            TelescopePromptNormal          = { fg = theme.ui.fg, bg = "none" },
+            TelescopePromptBorder          = { fg = theme.ui.nontext, bg = "none" },
+            TelescopeResultsNormal         = { fg = theme.ui.fg, bg = "none" },
+            TelescopeResultsBorder         = { fg = theme.ui.nontext, bg = "none" },
+            TelescopePreviewNormal         = { fg = theme.ui.fg, bg = "none" },
+            TelescopePreviewBorder         = { fg = theme.ui.nontext, bg = "none" },
+            NoiceCmdlineIcon               = { fg = theme.ui.nontext, bg = "none" },
+            NoiceCmdlineIconInput          = { fg = theme.ui.nontext, bg = "none" },
             NoiceCmdlineIconSearch         = { fg = theme.diag.warning, bg = "none" },
             NoiceCmdlinePopupBorder        = { fg = theme.diag.info, bg = "none" },
             NoiceCmdlinePopupBorderSearch  = { fg = theme.diag.warning, bg = "none" },
@@ -97,8 +101,10 @@ return {
             NoiceConfirmBorder             = { fg = theme.diag.info, bg = "none" },
             NoiceCmdlinePopup              = { fg = theme.diag.info, bg = "none" },
             NoiceCmdlinePopupBorderCmdline = { fg = theme.diag.info, bg = "none" },
+            WinSeparator                   = { fg = theme.ui.bg_p2 },
+            EndOfBuffer                    = { fg = theme.ui.bg_p2 },
             -- Syntax
-            LspInlayHint                   = { bg = "none", fg = theme.syn.comment },
+            LspInlayHint                   = { bg = "none", fg = theme.ui.bg_p2 },
             Comment                        = { bg = "none", fg = theme.ui.nontext },
             Boolean                        = { fg = theme.syn.constant, bold = false },
             ["@keyword.operator"]          = { fg = theme.syn.operator, bold = false },
@@ -112,7 +118,7 @@ return {
       })
 
       -- setup must be called before loading
-      vim.cmd("colorscheme kanagawa")
+      --vim.cmd("colorscheme kanagawa")
     end
   },
 
