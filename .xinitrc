@@ -2,50 +2,18 @@
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
-sysresources=/etc/X11/xinit/.Xresources
-sysmodmap=/etc/X11/xinit/.Xmodmap
 
-# merge in defaults and keymaps
-
-if [ -f $sysresources ]; then
-
-
-
-
-
-
-
-    xrdb -merge $sysresources
-
-fi
-
-if [ -f $sysmodmap ]; then
-    xmodmap $sysmodmap
-fi
+# Disable auto scaling and set global 1.5 scale for qt apps
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_ENABLE_HIGHDPI_SCALING=0
+export QT_SCALE_FACTOR=1
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
-fi
-
-# start some nice programs
-
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
 fi
 
 xrdb /home/emil/.Xresources
@@ -53,8 +21,9 @@ xset s off -dpms
 xset r rate 200 25
 setxkbmap -model pc105 -layout us,fi -option grp:caps_toggle
 picom &
+calcurse --daemon &
 udiskie --tray &
 blueman-applet &
 redshift-gtk &
-opensnitch-ui &
+protonmail-bridge -n &
 exec i3
