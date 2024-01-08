@@ -13,12 +13,9 @@ exec_always --no-startup-id $HOME/.scripts/xidlehook.sh
 # Lock the screen immediately
 bindsym $mod+Shift+q exec i3lock -c 000000 && systemctl suspend
 
-# Start redshift on startup
-#exec --no-startup-id redshift
-
 # Set desktop background with hsetroot
-#exec --no-startup-id hsetroot -fill /home/emil/Documents/wallpapers/jocko.jpg
-exec --no-startup-id hsetroot -solid "#000000"
+#exec --no-startup-id hsetroot -solid "#101010"
+exec --no-startup-id hsetroot -cover ~/Documents/wallpapers/banner-6k.png
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -44,13 +41,12 @@ set $right semicolon
 bindsym $mod+Return exec kitty
 
 # Start applications
-bindsym $mod+a exec firefox
-bindsym $mod+s exec pcmanfm
-bindsym $mod+d exec code
+bindsym $mod+b exec firefox # mod+f clashes with tmux mappings
+bindsym $mod+p exec pcmanfm
+bindsym $mod+c exec code
 bindsym $mod+g exec galculator
 bindsym Print exec flameshot gui
 bindsym $mod+Print exec flameshot screen
-
 
 # kill focused window
 bindsym $mod+q kill
@@ -82,7 +78,7 @@ bindsym $mod+Control+$up move up
 bindsym $mod+Control+$right move right
 
 # split in horizontal orientation
-bindsym $mod+b split h
+bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -179,13 +175,13 @@ hide_edge_borders smart
 title_align center
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #45545c #45545c #000000 #45545c   #45545c
-client.focused_inactive #000000 #000000 #ebdbb2 #000000   #000000
-client.unfocused        #000000 #000000 #44443a #000000   #000000
-client.urgent           #af0000 #af0000 #000000 #af0000   #af0000
-client.placeholder      #000000 #000000 #000000 #000000   #000000
+client.focused          #45545c #45545c #d4be98 #45545c   #45545c
+client.focused_inactive #101010 #101010 #d4be98 #101010   #101010
+client.unfocused        #101010 #101010 #44443a #101010   #101010
+client.urgent           #af0000 #af0000 #101010 #af0000   #af0000
+client.placeholder      #101010 #101010 #101010 #101010   #101010
 
-client.background       #000000
+client.background       #101010
 
 # Always float these apps
 for_window [class="Pavucontrol"] floating enable
@@ -196,5 +192,5 @@ for_window [class="Pulseeffects"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Tor Browser"] floating enable
 for_window [class="Galculator"] floating enable
-for_window [class="zoom"] floating enable
+#for_window [class="zoom"] floating enable
 for_window [class="zoom" title="Zoom Meeting"] floating disable
