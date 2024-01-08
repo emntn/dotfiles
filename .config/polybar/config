@@ -1,13 +1,13 @@
 [colors]
-background = #000000
+background = #101010
 background-alt = #44443a
-foreground = #ebdbb2
+foreground = #d4be98
 foreground-alt = #555
-yellow = #fabd2f
-cyan = #83a598
-red = #fb4934
-green = #b8bb26
-blue = #83a598
+yellow = #d8a657
+cyan = #89b482
+red = #ea6962
+green = #a9b665
+blue = #7daea3
 
 [bar/mybar]
 dpi = 144
@@ -32,17 +32,18 @@ font-0 = "JetBrains Mono:pixelsize=10;2.5"
 
 modules-left = i3
 modules-center = pulseaudio date xkeyboard 
-modules-right = cpu memory redshift
+modules-right = cpu memory redshift tray
 
 separator = "|"
 separator-padding = 1
 separator-foreground = ${colors.foreground-alt}
 
-tray-position = right
-tray-padding = 5
-tray-maxsize = 25
-
 wm-restack = i3
+
+[module/tray]
+type = internal/tray
+tray-spacing = 2px
+tray-size = 25px
 
 [module/xwindow]
 type = internal/xwindow
@@ -70,25 +71,6 @@ label-mounted-foreground = ${colors.blue}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.yellow}
-label-focused-padding = 1
-
-label-occupied = %index%
-label-occupied-padding = 1
-
-label-urgent = %index%!
-label-urgent-background = ${colors.red}
-label-urgent-padding = 1
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 1
-
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -103,9 +85,9 @@ label-mode-background = ${colors.red}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-foreground = ${colors.blue}
+label-focused-foreground = ${colors.yellow}
 label-focused-background = ${colors.background}
-label-focused-underline = ${colors.blue}
+label-focused-underline = ${colors.yellow}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
@@ -127,24 +109,27 @@ label-urgent-padding = 1
 [module/cpu]
 type = internal/cpu
 interval = 2
-label = cpu %percentage%%
-format-foreground = ${colors.yellow}
+format-prefix = "CPU "
+format-prefix-foreground = ${colors.yellow}
+label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-label = mem %percentage_used%%
-format-foreground = ${colors.green}
+format-prefix = "RAM "
+format-prefix-foreground = ${colors.yellow}
+label = %percentage_used:2%%
 
 [module/date]
 type = internal/date
 interval = 1
 
-date = "%a %d-%m-%y"
+date = "%a %Y-%m-%d"
 
 time = %H:%M:%S
 
 label = %date% %time%
+label-foreground = ${colors.foreground}
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -153,7 +138,7 @@ format-volume = <label-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${colors.foreground}
 
-label-muted = muted (%percentage%%)
+label-muted = %percentage%%
 label-muted-foreground = ${colors.red}
 
 [module/redshift]
@@ -164,7 +149,6 @@ click-right = pkill redshift
 format-foreground = ${colors.red}
 
 exec = ~/.config/polybar/redshift.sh
-
 
 [settings]
 screenchange-reload = true
