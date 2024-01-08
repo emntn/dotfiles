@@ -1,8 +1,3 @@
-# Newsboat colour scheme to work with the Gruvbox palette
-# Inspired by the vim theme https://github.com/morhetz/gruvbox
-# Tested with the Kitty gruvbox terminal colour scheme
-# https://github.com/wdomitrz/kitty-gruvbox-theme
-
 color background          default    default
 color listnormal          default    default
 color listnormal_unread   color10    default
@@ -37,6 +32,7 @@ bind-key k up
 # Other
 auto-reload yes
 reload-threads 100
+datetime-format "%Y-%m-%d"
 
 # Macro
 bind-key BACKSPACE macro-prefix
