@@ -4,18 +4,22 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango: JetBrains Mono 10
 
+# Launch firefox on ws1 and alacritty on ws2 during startup
+exec i3-msg 'workspace 1; exec firefox'
+exec i3-msg 'workspace 2; exec alacritty'
+
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Lock the screen after inactivity
-exec_always --no-startup-id $HOME/.scripts/xidlehook.sh 
+exec --no-startup-id $HOME/.scripts/xidlehook.sh 
 
 # Lock the screen immediately
 bindsym $mod+Shift+q exec i3lock -c 000000 && systemctl suspend
 
 # Set desktop background with hsetroot
 #exec --no-startup-id hsetroot -solid "#101010"
-exec --no-startup-id hsetroot -cover ~/Documents/wallpapers/banner-6k.png
+exec_always --no-startup-id hsetroot -cover ~/Documents/wallpapers/banner-6k.png
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -27,9 +31,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Default to tabbed layout
-workspace_layout tabbed
-
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 set $left j
@@ -38,13 +39,13 @@ set $up l
 set $right semicolon
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # Start applications
-bindsym $mod+b exec firefox # mod+f clashes with tmux mappings
-bindsym $mod+p exec pcmanfm
+bindsym $mod+f exec firefox
+bindsym $mod+p exec alacritty -e ranger
 bindsym $mod+c exec code
-bindsym $mod+g exec galculator
+bindsym $mod+g exec alacritty -e calc
 bindsym Print exec flameshot gui
 bindsym $mod+Print exec flameshot screen
 
@@ -58,24 +59,24 @@ bindsym $mod+space exec rofi -show drun
 #bindsym $mod+Tab exec $HOME/.scripts/window_switcher.sh
 
 # Move focus
-bindsym $mod+Shift+$left focus left
-bindsym $mod+Shift+$down focus down
-bindsym $mod+Shift+$up focus up
-bindsym $mod+Shift+$right focus right
-bindsym $mod+Shift+Left focus left
-bindsym $mod+Shift+Down focus down
-bindsym $mod+Shift+Up focus up
-bindsym $mod+Shift+Right focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # Move window (Control = Alt)
-bindsym $mod+Control+Left move left
-bindsym $mod+Control+Down move down
-bindsym $mod+Control+Up move up
-bindsym $mod+Control+Right move right
-bindsym $mod+Control+$left move left
-bindsym $mod+Control+$down move down
-bindsym $mod+Control+$up move up
-bindsym $mod+Control+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -92,7 +93,7 @@ bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Control+f floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -120,8 +121,8 @@ bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
 # switch to prev/next workspace
-#bindsym $mod+Control+$right workspace next
-#bindsym $mod+Control+$left workspace prev
+bindsym $mod+Control+$right workspace next
+bindsym $mod+Control+$left workspace prev
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -159,6 +160,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Default to tabbed layout
+workspace_layout tabbed
+
 # Focus follows mouse
 focus_follows_mouse no
 
@@ -193,4 +197,4 @@ for_window [class="Blueman-manager"] floating enable
 for_window [class="Tor Browser"] floating enable
 for_window [class="Galculator"] floating enable
 #for_window [class="zoom"] floating enable
-for_window [class="zoom" title="Zoom Meeting"] floating disable
+#for_window [class="zoom" title="Zoom Meeting"] floating disable
