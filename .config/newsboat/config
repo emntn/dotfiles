@@ -6,7 +6,7 @@ color listfocus_unread    color12    default
 color info                color8     default
 color article             default    default
 highlight feedlist "===.*===" color11 default bold
-highlight feedlist ".*0/0.." default default invis
+highlight feedlist ".*0/0.." default default
 
 # highlights
 highlight article "^(Feed|Link):.*$" color8 default bold

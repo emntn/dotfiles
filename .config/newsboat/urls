@@ -41,6 +41,8 @@ https://preslav.me/index.xml "~Preslav Rachev" "Blogs"
 https://chuck.is/feed.xml "Blogs"
 https://thedataquarry.com/posts/atom.xml "~The Data Quarry" "Blogs"
 https://thume.ca/atom.xml "Blogs"
+https://ezrizhu.com/blog.xml "Blogs"
+https://www.lucasvieira.nl/index.xml "Blogs"
 
 "query:=== Companies ===:tags # \"Companies\""
 
@@ -61,13 +63,13 @@ http://javascriptweekly.com/rss "Newsletters"
 https://nodeweekly.com/rss/ "Newsletters"
 https://pycoders.com/feed/n5RQVSXe "Newsletters"
 https://react.statuscode.com/rss "Newsletters"
-https://rustinblockchain.org/index.xml "~RiB" "Newsletters"
+https://rustinblockchain.org/index.xml "~Rust in Blockchain" "Newsletters"
 https://rustmagazine.org/feed.xml "Newsletters"
 http://this-week-in-rust.org/atom.xml "Newsletters"
 
 "query:=== Others ===:tags # \"Others\""
 
-https://hnrss.org/best "Others"
+https://hnrss.org/frontpage "~HN" "Others"
 https://lobste.rs/rss "Others"
 https://archlinux.org/feeds/news/ "~Arch Linux" "Others"
 
