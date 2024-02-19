@@ -26,4 +26,5 @@ udiskie --tray &
 blueman-applet &
 redshift-gtk &
 protonmail-bridge -n &
+dunst &
 exec i3
