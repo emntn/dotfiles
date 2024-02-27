@@ -1,28 +1,28 @@
 #TabsToolbar,
 .tabbrowser-tab {
-  background-color: #000000 !important;
+  background-color: #101010 !important;
   font-size: 11px;
   max-height: 30px !important;
   margin-top: -2px !important;
 }
 
 #titlebar {
-  background-color: #000000 !important;
+  background-color: #101010 !important;
   --tab-min-height: 30px !important;
   margin-top: -2px !important;
 }
 
 :root:not([customizing]) #TabsToolbar {
-  background-color: #000000;
+  background-color: #101010;
 }
 
 :root:not([customizing]) #navigator-toolbox {
-  background-color: #000000 !important;
+  background-color: #101010 !important;
 }
 
 
 tab:not([selected="true"]) {
-  background-color: #000000 !important;
+  background-color: #101010 !important;
   color: #d4be98 !important;
 }
 
@@ -46,39 +46,39 @@ tab {
   {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  background-color: #000000 !important;
+  background-color: #101010 !important;
   color: #d4be98 !important;
-  border-color: #000000 !important;
+  border-color: #101010 !important;
 }
 
 /* Tab: selected colors */
 
 #tabbrowser-tabs .tabbrowser-tab[selected] .tab-content {
-  background: #000000 !important;
+  background: #101010 !important;
   color: #d4be98 !important;
 }
 
 #tabbrowser-tabs .tabbrowser-tab:not([selected]) .tab-content {
-  background: #000000 !important;
+  background: #101010 !important;
   color: #44443a !important;
 }
 
 /* Tab: hovered colors */
 #tabbrowser-tabs .tabbrowser-tab:hover:not([selected]) .tab-content {
-  background: #000000 !important;
+  background: #101010 !important;
   color: #d4be98 !important;
 }
 
 /*AGENT_SHEET*/
 #main-window #navigator-toolbox #TabsToolbar:not(:-moz-lwtheme) {
-  background: #000000 !important;
+  background: #101010 !important;
 }
 
 #nav-bar-overflow-button,
 #PanelUI-button,
 #PanelUI-menu-button,
 #unified-extensions-button {
-  background: #000000 !important;
+  background: #101010 !important;
   fill: #d4be98 !important;
   fill-opacity: 1.0 !important;
   opacity: 0.8 !important;
@@ -87,13 +87,13 @@ tab {
 
 #customizableui-special-spring1,
 #customizableui-special-spring2 {
-  background: #000000 !important;
+  background: #101010 !important;
 }
 
 /* style navbar */
 #nav-bar,
 #navigator-toolbox {
-  background: #000000 !important;
+  background: #101010 !important;
   border: none !important;
 }
 
@@ -128,9 +128,10 @@ toolbar,
 nav-bar {
 
   -moz-appearance: none !important;
+  appearance: none !important;
 
   border: none !important;
   box-shadow: none !important;
-  background: #000000 !important;
+  background: #101010 !important;
   color: #d4be98 !important;
 }
