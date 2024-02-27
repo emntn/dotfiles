@@ -1,0 +1,32 @@
+# vim: filetype=neomuttrc
+#
+unmailboxes *
+
+# USER
+set realname = ''
+set from = ''
+set use_from = yes
+
+# PRIVATE
+set imap_user = '<EMAIL>'
+set imap_pass = '<PASSWORD>'
+
+set ssl_starttls=yes
+set ssl_force_tls=yes
+
+set folder = 'imap://127.0.0.1:1143/'
+set spoolfile = 'imap://127.0.0.1:1143/INBOX'
+set postponed = 'imap://127.0.0.1:1143/$imap_user/Drafts'
+set mbox = 'imap://127.0.0.1:1143/$imap_user/All Mail'
+
+set header_cache = '~/.mail/cache/headers'
+set message_cachedir = '~/.mail/cache/bodies'
+set certificate_file = '~/.mail/certificates'
+
+set smtp_authenticators = 'gssapi:login'
+
+# ================  SMTP  ====================
+set smtp_url = 'smtp://$imap_user:$imap_pass@127.0.0.1:1025/'
+
+set move = no
+set imap_keepalive = 60
