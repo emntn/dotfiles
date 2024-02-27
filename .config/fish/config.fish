@@ -15,9 +15,11 @@ export MANWIDTH=80
 alias jf="cd ~/notes && sh ~/.scripts/journal/load_journal.sh && sh ~/.scripts/journal/journal.sh"
 alias save="sh ~/.scripts/journal/save_journal.sh"
 alias wk="cd ~/notes && sh ~/.scripts/weekly/weekly.sh && cd -"
-alias ls="eza -al"
+alias ls="eza -al --group-directories-first --no-quotes"
 alias vim="nvim"
+alias mutt="neomutt"
 alias duck="sh ~/.scripts/duck.sh"
+alias weather="curl wttr.in/turku\?MFQ"
 
 # tmux
 alias base="sh ~/.scripts/tmux/base.sh"
