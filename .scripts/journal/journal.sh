@@ -25,13 +25,13 @@ done
 last_day=$(cal | awk 'NF {DAYS = $NF}; END {print DAYS}')
 
 # get this weeks weekdays and their dates for printing them to the journal
-mon="## $(date --date="today" +"%a %d-%m-%Y")\n\n"
-tue="## $(date --date="next Tuesday" +"%a %d-%m-%Y")\n\n"
-wed="## $(date --date="next Wednesday" +"%a %d-%m-%Y")\n\n"
-thu="## $(date --date="next Thursday" +"%a %d-%m-%Y")\n\n"
-fri="## $(date --date="next Friday" +"%a %d-%m-%Y")\n\n"
-sat="## $(date --date="next Saturday" +"%a %d-%m-%Y")\n\n"
-sun="## $(date --date="next Sunday" +"%a %d-%m-%Y")\n\n- [ ] Weekly journal"
+mon="## $(date --date="today" +"%a %d-%m-%Y")\n\n- [ ] Duolingo"
+tue="## $(date --date="next Tuesday" +"%a %d-%m-%Y")\n\n- [ ] Duolingo"
+wed="## $(date --date="next Wednesday" +"%a %d-%m-%Y")\n\n- [ ] Duolingo"
+thu="## $(date --date="next Thursday" +"%a %d-%m-%Y")\n\n- [ ] Duolingo"
+fri="## $(date --date="next Friday" +"%a %d-%m-%Y")\n\n- [ ] Duolingo"
+sat="## $(date --date="next Saturday" +"%a %d-%m-%Y")\n\n- [ ] Duolingo"
+sun="## $(date --date="next Sunday" +"%a %d-%m-%Y")\n\n- [ ] Weekly journal\n- [ ] Duolingo"
 weekdays=("$mon" "$tue" "$wed" "$thu" "$fri" "$sat" "$sun")
 
 # whole path to file

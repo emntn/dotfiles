@@ -2,7 +2,7 @@
 
 
 
-## 2. What did I do towards my goals?
+## 2. What did I do to improve myself or my life, to get closer to my goals?
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-## 4. What is my current biggest priority?
+## 4. What is my biggest priority for next week?
 
 
 

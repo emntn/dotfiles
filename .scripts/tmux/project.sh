@@ -22,7 +22,16 @@ done
 tmux new-session -d -s $session
 
 window=1
-tmux send-keys -t $session:$window 'vim' C-m
+if [ -f "main.go" ]; then
+  tmux send-keys -t $session:$window 'vim -O main.go readme.md' C-m
+elif [ -f "src/main.rs" ]; then
+  tmux send-keys -t $session:$window 'vim -O src/main.rs readme.md' C-m
+elif [ -f "main.py" ]; then
+  tmux send-keys -t $session:$window 'vim -O main.py readme.md' C-m
+else
+  tmux send-keys -t $session:$window 'vim' C-m
+fi
+
 
 window=2
 tmux new-window -t $session:$window
