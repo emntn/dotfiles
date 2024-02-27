@@ -20,10 +20,9 @@ xrdb /home/emil/.Xresources
 xset s off -dpms
 xset r rate 200 25
 setxkbmap -model pc105 -layout us,fi -option grp:caps_toggle
-picom &
+picom --daemon &
 calcurse --daemon &
 udiskie --tray &
-blueman-applet &
 redshift-gtk &
 protonmail-bridge -n &
 dunst &
