@@ -22,8 +22,8 @@
 
     width = 300
     height = 500
-    origin = top-right
-    offset = 5x25
+    origin = top-center
+    offset = 0x20
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
