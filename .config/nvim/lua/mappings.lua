@@ -32,7 +32,6 @@ nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
 nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
 nmap('<leader>fc', '<cmd>Telescope git_commits<cr>')
 nmap('<leader>fr', '<cmd>Telescope spell_suggest<cr>')
-nmap('<leader>fb', '<cmd>Telescope file_browser<cr>')
 nmap('<leader>fd', '<cmd>Telescope diagnostics<cr>')
 
 -- Map arrow keys to move naturally

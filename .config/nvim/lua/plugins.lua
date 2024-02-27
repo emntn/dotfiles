@@ -14,7 +14,7 @@ return {
             highlight! link mkdCodeDelimiter Green
             highlight! link mkdListItemCheckbox Fg
 
-            let l:palette = gruvbox_material#get_palette('hard', 'material', {})
+            let l:palette = gruvbox_material#get_palette('hard', 'material', {'bg1': ['#202020', '234'],})
 
             call gruvbox_material#highlight('markdownH1', l:palette.yellow, l:palette.none, 'bold')
             call gruvbox_material#highlight('markdownH2', l:palette.yellow, l:palette.none, 'bold')
@@ -32,10 +32,13 @@ return {
             call gruvbox_material#highlight('LspInlayHint', l:palette.bg5, l:palette.none, 'italic')
             call gruvbox_material#highlight('IndentBlankline', l:palette.bg5, l:palette.none)
             call gruvbox_material#highlight('Special', l:palette.blue, l:palette.none)
-            call gruvbox_material#highlight('Pmenu', l:palette.fg1, l:palette.bg_dim)
+            call gruvbox_material#highlight('Pmenu', l:palette.fg1, l:palette.bg1)
             call gruvbox_material#highlight('PmenuSel', l:palette.fg1, l:palette.bg3)
-            call gruvbox_material#highlight('PmenuSbar', l:palette.none, l:palette.none)
+            call gruvbox_material#highlight('PmenuSbar', l:palette.none, l:palette.bg1)
             call gruvbox_material#highlight('PmenuThumb', l:palette.none, l:palette.bg3)
+            call gruvbox_material#highlight('NormalFloat', l:palette.fg1, l:palette.bg1)
+            call gruvbox_material#highlight('FloatBorder', l:palette.grey1, l:palette.bg1)
+            call gruvbox_material#highlight('FloatTitle', l:palette.orange, l:palette.bg1, 'bold')
         endfunction
 
         augroup GruvboxMaterialCustom
@@ -64,6 +67,7 @@ return {
     config = function()
       require('kanagawa').setup({
         statementStyle = { bold = false },
+        keywordStyle = { italic = false },
         transparent = true,
         colors = {
           palette = { dragonWhite = "#a69f94" },
@@ -141,10 +145,12 @@ return {
     end,
   },
 
-  { "nvim-lua/plenary.nvim" },
-  { "nvim-telescope/telescope.nvim" },
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.5',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
   { "nvim-telescope/telescope-fzy-native.nvim" },
-  { "nvim-telescope/telescope-file-browser.nvim" },
   { "nvim-telescope/telescope-ui-select.nvim" },
   { "neovim/nvim-lspconfig" },
 
