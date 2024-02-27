@@ -63,4 +63,5 @@ hide_when_typing = true
 bindings = [
 { key = "C", mods = "Control", action = "Copy" },
 { key = "V", mods = "Control", action = "Paste" },
+{ key = "C", mods = "Control|Shift", chars = "\u0003"}
 ]
