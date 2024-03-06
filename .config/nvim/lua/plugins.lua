@@ -8,14 +8,28 @@ return {
     config = function()
       vim.cmd [[
         function! s:gruvbox_material_custom() abort
+
+            highlight! link TSString String
+            highlight! link CocSymbolString String
+            highlight! link javascriptPropertyNameString String
+            highlight! link typescriptStringProperty String
+            highlight! link cmakeKWstring String
+
+            highlight! link TSType BlueItalic
+            highlight! link TSTypeBuiltin BlueItalic
+            highlight! link TSTypeDefinition BlueItalic
+            highlight! link TSNamespace BlueItalic
+
             highlight! link mkdHeading Yellow
             highlight! link mkdListItem Fg
             highlight! link mkdBold Fg
             highlight! link mkdCodeDelimiter Green
+            highlight! link mkdCode Green
             highlight! link mkdListItemCheckbox Fg
 
             let l:palette = gruvbox_material#get_palette('hard', 'material', {'bg1': ['#202020', '234'],})
 
+            call gruvbox_material#highlight('String', l:palette.yellow, l:palette.none)
             call gruvbox_material#highlight('markdownH1', l:palette.yellow, l:palette.none, 'bold')
             call gruvbox_material#highlight('markdownH2', l:palette.yellow, l:palette.none, 'bold')
             call gruvbox_material#highlight('markdownH3', l:palette.yellow, l:palette.none, 'bold')
