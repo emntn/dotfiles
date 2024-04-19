@@ -9,8 +9,8 @@ highlight feedlist "===.*===" color11 default bold
 highlight feedlist ".*0/0.." default default
 
 # highlights
-highlight article "^(Feed|Link):.*$" color8 default bold
-highlight article "^(Title|Date|Author):.*$" color8 default bold
+highlight article "^(Feed|Link):.*$" color3 default
+highlight article "^(Title|Date|Author):.*$" color3 default
 highlight article "https?://[^ ]+" color13 default underline
 highlight article "\\[[0-9]+\\]" color13 default bold
 highlight article "\\[image\\ [0-9]+\\]" color13 default bold
@@ -27,7 +27,7 @@ unbind-key K
 bind-key j down
 bind-key k up
 #bind-key ; open
-#bind-key j quit
+#bind-key h quit
 
 # Other
 auto-reload yes
@@ -41,4 +41,4 @@ unbind-key ,
 # Browser behavior
 browser "firefox %u"
 bind-key o open-in-browser-and-mark-read
-macro o set browser firefox; open-in-browser-and-mark-read; set browser lynx
+#macro o set browser firefox; open-in-browser-and-mark-read; set browser lynx
