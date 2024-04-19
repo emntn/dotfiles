@@ -42,7 +42,7 @@ config.window_padding = {
 config.color_scheme = "gruvbox_material_dark_hard"
 config.color_schemes = {
   ["gruvbox_material_dark_hard"] = {
-    foreground = "#D4BE98",
+    foreground = "#d4be98",
     background = "#101010",
     cursor_bg = "#a89984",
     cursor_border = "#D4BE98",
@@ -51,7 +51,7 @@ config.color_schemes = {
     selection_fg = "#3C3836",
 
     ansi = { "#101010", "#ea6962", "#a9b665", "#d8a657", "#7daea3", "#d3869b", "#89b482", "#d4be98" },
-    brights = { "#eddeb5", "#ea6962", "#a9b665", "#d8a657", "#7daea3", "#d3869b", "#89b482", "#d4be98" },
+    brights = { "#928374", "#ea6962", "#a9b665", "#d8a657", "#7daea3", "#d3869b", "#89b482", "#d4be98" },
   },
 }
 
