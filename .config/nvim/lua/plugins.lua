@@ -18,7 +18,7 @@ return {
             highlight! link TSType BlueItalic
             highlight! link TSTypeBuiltin BlueItalic
             highlight! link TSTypeDefinition BlueItalic
-            highlight! link TSNamespace BlueItalic
+            highlight! link TSNamespace PurpleItalic
 
             highlight! link mkdHeading Yellow
             highlight! link mkdListItem Fg
