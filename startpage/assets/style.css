@@ -18,6 +18,8 @@ p {
 
 .wrapper {
   height: 100vh;
+  width: 800px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,4 +28,3 @@ p {
 #date {
   margin-bottom: 2em;
 }
-
