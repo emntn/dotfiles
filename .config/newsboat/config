@@ -41,4 +41,6 @@ unbind-key ,
 # Browser behavior
 browser "firefox %u"
 bind-key o open-in-browser-and-mark-read
-#macro o set browser firefox; open-in-browser-and-mark-read; set browser lynx
+macro m set browser "mpv %u"; open-in-browser ; set browser "firefox %u"
+#macro m set browser "~/.scripts/yt_download.sh %u"; open-in-browser ; set browser "firefox %u"
+#macro o set browser firefox; open-in-browser-and-mark-read;
