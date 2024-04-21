@@ -10,7 +10,7 @@ tmux new-session -d -s $session
 
 window=1
 tmux rename-window -t $session:$window 'note'
-tmux send-keys -t $session:$window 'cd ~/notes && vim -O personal/journal/'$year'/'$journal' dev/learning/01_new_chapter.md' C-m
+tmux send-keys -t $session:$window 'sh ~/.scripts/journal/load_journal.sh && cd ~/notes && vim -O personal/journal/'$year'/'$journal' dev/learning/01_new_chapter.md' C-m
 
 window=2
 tmux new-window -t $session:$window
