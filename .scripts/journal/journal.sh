@@ -52,7 +52,7 @@ if [ $today == "Monday" ]; then
     for index in "${!next_week_dates[@]}"; do
       day=${next_week_dates[index]}
       if [ "$day" -eq "$last_day" ]; then
-        printf "${weekdays[index]}- [ ] Pay the bills\n- [ ] Hours to Sole\n\n" >> $journal_path
+        printf "${weekdays[index]}\n- [ ] Pay the bills\n\n" >> $journal_path
       else
         printf "${weekdays[index]}\n\n" >> $journal_path
       fi
