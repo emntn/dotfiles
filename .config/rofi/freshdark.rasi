@@ -32,7 +32,7 @@
 #window {
     background-color: @background;
     border:           1;
-    padding:          5;
+    padding:          1;
     width:            800px;
     height:           500px;
 }
