@@ -135,5 +135,5 @@ const second = 1000
 const minute = 60
 
 getQuote()
-setInterval(getQuote, second * minute)
+setInterval(getQuote, second * minute * 5)
 
