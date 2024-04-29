@@ -1,5 +1,9 @@
 const quotes = [
   {
+    "quote": "You have power over your mind — not outside events. Realize this, and you will find strength.",
+    "author": "Marcus Aurelius"
+  },
+  {
     "quote": "If a man knows not to which port he sails, no wind is favorable.",
     "author": "Seneca"
   },

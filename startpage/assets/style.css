@@ -3,6 +3,84 @@
   --fg: #d4be98;
 }
 
+html,
+body,
+div,
+span,
+header,
+nav,
+main,
+article,
+section,
+aside,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+strong,
+em,
+b,
+i,
+u,
+a,
+ul,
+ol,
+li,
+blockquote,
+pre,
+code,
+img,
+audio,
+video,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td,
+form,
+input {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+header,
+nav,
+main,
+article,
+section,
+aside,
+footer,
+blockquote,
+pre,
+img,
+audio,
+video,
+table,
+form {
+  display: block;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   background-color: var(--bg);
   font-family: monospace;
