@@ -3,59 +3,40 @@ vim.env["NVIM_TUI_ENABLE_TRUE_COLOR"] = 1
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins",
-  {
-    ui = {
-      icons = {
-        cmd = "⌘",
-        config = "🛠",
-        event = "📅",
-        ft = "📂",
-        init = "⚙",
-        keys = "🗝",
-        plugin = "🔌",
-        runtime = "💻",
-        source = "📄",
-        start = "🚀",
-        task = "📌",
-        lazy = "💤 ",
-      },
-    },
-  }
+    {
+        ui = {
+            icons = {
+                cmd = "⌘",
+                config = "🛠",
+                event = "📅",
+                ft = "📂",
+                init = "⚙",
+                keys = "🗝",
+                plugin = "🔌",
+                runtime = "💻",
+                source = "📄",
+                start = "🚀",
+                task = "📌",
+                lazy = "💤 ",
+            },
+        },
+    }
 )
 require("extras")
 require("lsp")
 require("mappings")
-
-vim.cmd [[
-" Go tabbing
-au BufNewFile,BufRead *.go set filetype=go
-autocmd filetype go setlocal tabstop=4
-autocmd filetype go setlocal softtabstop=4
-autocmd filetype go setlocal shiftwidth=4
-autocmd filetype go setlocal expandtab
-
-" Filetype spesific settings
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-autocmd filetype markdown setlocal nonumber
-autocmd filetype markdown setlocal spell spelllang=en
-autocmd filetype markdown set textwidth=80
-autocmd filetype markdown set colorcolumn=
-autocmd filetype markdown set nolist
-" Fix wrapping lists with gq
-"autocmd FileType markdown set comments=fb:*,fb:+,fb:-,n:> indentexpr=
-]]
 
 vim.opt.updatetime = 50
 
@@ -74,14 +55,14 @@ vim.o.foldenable = false
 
 -- Format on save if the language server supports formatting
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function()
-    local bufnr = vim.fn.bufnr()
-    local clients = vim.lsp.buf_get_clients(bufnr)
-    if #clients > 0 and clients[1].supports_method("textDocument/formatting") then
-      vim.lsp.buf.format()
-    end
-  end,
+    pattern = "*",
+    callback = function()
+        local bufnr = vim.fn.bufnr()
+        local clients = vim.lsp.buf_get_clients(bufnr)
+        if #clients > 0 and clients[1].supports_method("textDocument/formatting") then
+            vim.lsp.buf.format()
+        end
+    end,
 })
 
 -- Split windows
@@ -89,18 +70,16 @@ vim.opt.fillchars = { vert = '│' }
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-
 vim.opt.completeopt = 'menu,menuone,noselect,noinsert'
-
 vim.opt.signcolumn = 'number'
 
 -- Enable use of the mouse for all modes
 vim.opt.mouse = 'a'
 
--- 1 tab is 2 spaces
-vim.opt.tabstop = 2
+-- 1 tab is 4 spaces
+vim.opt.tabstop = 4
 vim.opt.softtabstop = 0
-vim.opt.shiftwidth = 2
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- disable folding
@@ -115,10 +94,10 @@ vim.opt.cursorlineopt = 'number'
 
 -- Turn backup off
 vim.opt.backup = false
-vim.opt.wb = false
+vim.opt.writebackup = false
 vim.opt.swapfile = false
 
-vim.opt.si = true
+vim.opt.smartindent = true
 vim.opt.wrap = true
 
 -- vim.opt.utf8 as standard encoding
