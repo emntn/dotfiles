@@ -175,6 +175,7 @@ lspconfig.gopls.setup {
 lspconfig.tsserver.setup {
   handlers = handlers,
   capabilities = capabilities,
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   settings = {
     typescript = {
       format = {
