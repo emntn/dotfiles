@@ -22,11 +22,6 @@ function tmap(shortcut, command)
   map('t', shortcut, command)
 end
 
--- map leader to Space
-nmap('<Space>', '<Nop>')
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- Find files using Telescope command-line sugar.
 nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
 nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')

@@ -3,36 +3,36 @@ vim.env["NVIM_TUI_ENABLE_TRUE_COLOR"] = 1
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins",
-    {
-        ui = {
-            icons = {
-                cmd = "⌘",
-                config = "🛠",
-                event = "📅",
-                ft = "📂",
-                init = "⚙",
-                keys = "🗝",
-                plugin = "🔌",
-                runtime = "💻",
-                source = "📄",
-                start = "🚀",
-                task = "📌",
-                lazy = "💤 ",
-            },
-        },
-    }
+  {
+    ui = {
+      icons = {
+        cmd = "⌘",
+        config = "🛠",
+        event = "📅",
+        ft = "📂",
+        init = "⚙",
+        keys = "🗝",
+        plugin = "🔌",
+        runtime = "💻",
+        source = "📄",
+        start = "🚀",
+        task = "📌",
+        lazy = "💤 ",
+      },
+    },
+  }
 )
 require("extras")
 require("lsp")
@@ -55,14 +55,14 @@ vim.o.foldenable = false
 
 -- Format on save if the language server supports formatting
 vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*",
-    callback = function()
-        local bufnr = vim.fn.bufnr()
-        local clients = vim.lsp.buf_get_clients(bufnr)
-        if #clients > 0 and clients[1].supports_method("textDocument/formatting") then
-            vim.lsp.buf.format()
-        end
-    end,
+  pattern = "*",
+  callback = function()
+    local bufnr = vim.fn.bufnr()
+    local clients = vim.lsp.buf_get_clients(bufnr)
+    if #clients > 0 and clients[1].supports_method("textDocument/formatting") then
+      vim.lsp.buf.format()
+    end
+  end,
 })
 
 -- Split windows
@@ -98,7 +98,7 @@ vim.opt.writebackup = false
 vim.opt.swapfile = false
 
 vim.opt.smartindent = true
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 -- vim.opt.utf8 as standard encoding
 vim.opt.encoding = 'utf-8'
@@ -114,6 +114,10 @@ vim.opt.linebreak = true
 
 -- Show line nubmers
 vim.opt.number = true
+
+-- Show tabs and trailing spaces
+vim.opt.list = true
+vim.opt.listchars = "tab:⟶·,trail:·,multispace:··"
 
 -- enable setting title
 vim.opt.title = true
