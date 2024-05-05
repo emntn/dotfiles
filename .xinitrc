@@ -4,9 +4,11 @@ userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 
 # Disable auto scaling and set global 1.5 scale for qt apps
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
-export QT_ENABLE_HIGHDPI_SCALING=0
-export QT_SCALE_FACTOR=1
+#export QT_AUTO_SCREEN_SCALE_FACTOR=0
+#export QT_ENABLE_HIGHDPI_SCALING=0
+#export QT_SCALE_FACTOR=1.5
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_ENABLE_HIGHDPI_SCALING=1
 
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
@@ -24,6 +26,6 @@ picom --daemon &
 calcurse --daemon &
 udiskie --tray &
 redshift-gtk &
-protonmail-bridge -n &
+#protonmail-bridge -n &
 dunst &
 exec i3
