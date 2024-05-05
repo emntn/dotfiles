@@ -226,7 +226,9 @@ c.colors.statusbar.private.fg = "#7daea3"
 
 # Background color of the statusbar in private browsing mode.
 # Type: QssColor
-c.colors.statusbar.private.bg = "#444444"
+# c.colors.statusbar.private.bg = "#444444"
+c.colors.statusbar.private.bg = "darkslategray"
+c.colors.statusbar.command.private.bg = "darkslategray"
 
 # Foreground color of the statusbar in command mode.
 # Type: QssColor
