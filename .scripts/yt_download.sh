@@ -1,2 +1,2 @@
 #!/bin/sh  
-youtube-dl -g -f best $1 | xargs mpv
+yt-dlp -g -f b $1 | xargs mpv
