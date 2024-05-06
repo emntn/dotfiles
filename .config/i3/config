@@ -4,9 +4,9 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango: JetBrains Mono 10
 
-# Launch qutebrowser on ws1 and terminal on ws2 during startup
-for_window [class="qutebrowser"] move --no-auto-back-and-forth container to workspace $ws1
-exec --no-startup-id i3-msg "workspace 1; exec qutebrowser; workspace 2; exec wezterm"
+# Launch firefox on ws1 and terminal on ws2 during startup
+for_window [class="firefox"] move --no-auto-back-and-forth container to workspace $ws1
+exec --no-startup-id i3-msg "workspace 1; exec firefox; workspace 2; exec wezterm"
 
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -42,7 +42,7 @@ set $right semicolon
 bindsym $mod+Return exec wezterm
 
 # Start applications
-bindsym $mod+b exec qutebrowser
+bindsym $mod+b exec firefox
 bindsym $mod+p exec pcmanfm
 bindsym $mod+c exec code
 bindsym $mod+g exec wezterm -e calc
