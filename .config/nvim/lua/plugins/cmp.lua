@@ -27,13 +27,13 @@ return {
           })
         },
         sources = {
-          { name = 'path' },              -- file paths
-          { name = 'nvim_lsp' },          -- from language server
+          { name = 'path' },                    -- file paths
+          { name = 'nvim_lsp' },                -- from language server
           { name = 'nvim_lsp_signature_help' }, -- display function signatures with current parameter emphasized
-          { name = 'nvim_lua' },          -- complete neovim's Lua runtime API such vim.lsp.*
-          { name = 'buffer' },            -- source current buffer
-          { name = 'vsnip' },             -- nvim-cmp source for vim-vsnip
-          { name = 'calc' },              -- source for math calculation
+          { name = 'nvim_lua' },                -- complete neovim's Lua runtime API such vim.lsp.*
+          { name = 'buffer' },                  -- source current buffer
+          { name = 'vsnip' },                   -- nvim-cmp source for vim-vsnip
+          { name = 'calc' },                    -- source for math calculation
         },
         window = {
           documentation = {
