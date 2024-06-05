@@ -4,60 +4,59 @@ return {
     lazy = false,    -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      vim.cmd [[
-        function! s:gruvbox_material_custom() abort
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        group = vim.api.nvim_create_augroup('gruvbox_material_custom', {}),
+        pattern = 'gruvbox-material',
+        callback = function()
+          local palette = vim.fn['gruvbox_material#get_palette']('hard', 'material', { bg1 = { '#202020', '234' } })
+          local hl = vim.api.nvim_set_hl
+          local set_hl = vim.fn['gruvbox_material#highlight']
 
-            highlight! link TSString String
-            highlight! link CocSymbolString String
-            highlight! link javascriptPropertyNameString String
-            highlight! link typescriptStringProperty String
-            highlight! link cmakeKWstring String
+          hl(0, 'TSString', { link = 'String' })
+          hl(0, 'CocSymbolString', { link = 'String' })
+          hl(0, 'javascriptPropertyNameString', { link = 'String' })
+          hl(0, 'typescriptStringProperty', { link = 'String' })
+          hl(0, 'cmakeKWstring', { link = 'String' })
 
-            highlight! link TSType BlueItalic
-            highlight! link TSTypeBuiltin BlueItalic
-            highlight! link TSTypeDefinition BlueItalic
-            highlight! link TSNamespace PurpleItalic
+          hl(0, 'TSType', { link = 'BlueItalic' })
+          hl(0, 'TSTypeBuiltin', { link = 'BlueItalic' })
+          hl(0, 'TSTypeDefinition', { link = 'BlueItalic' })
+          hl(0, 'TSNamespace', { link = 'PurpleItalic' })
 
-            highlight! link mkdHeading Yellow
-            highlight! link mkdListItem Fg
-            highlight! link mkdBold Fg
-            highlight! link mkdCodeDelimiter Green
-            highlight! link mkdCode Green
-            highlight! link mkdListItemCheckbox Fg
+          hl(0, 'mkdHeading', { link = 'Yellow' })
+          hl(0, 'mkdListItem', { link = 'Fg' })
+          hl(0, 'mkdBold', { link = 'Fg' })
+          hl(0, 'mkdCodeDelimiter', { link = 'Green' })
+          hl(0, 'mkdCode', { link = 'Green' })
+          hl(0, 'mkdListItemCheckbox', { link = 'Fg' })
 
-            let l:palette = gruvbox_material#get_palette('hard', 'material', {'bg1': ['#202020', '234'],})
+          set_hl('String', palette.yellow, palette.none)
+          set_hl('markdownH1', palette.yellow, palette.none, 'bold')
+          set_hl('markdownH2', palette.yellow, palette.none, 'bold')
+          set_hl('markdownH3', palette.yellow, palette.none, 'bold')
+          set_hl('markdownH4', palette.yellow, palette.none, 'bold')
+          set_hl('markdownH5', palette.yellow, palette.none, 'bold')
+          set_hl('markdownH6', palette.yellow, palette.none, 'bold')
+          set_hl('htmlH1', palette.yellow, palette.none, 'bold')
+          set_hl('htmlH2', palette.yellow, palette.none, 'bold')
+          set_hl('htmlH3', palette.yellow, palette.none, 'bold')
+          set_hl('htmlH4', palette.yellow, palette.none, 'bold')
+          set_hl('htmlH5', palette.yellow, palette.none, 'bold')
+          set_hl('htmlH6', palette.yellow, palette.none, 'bold')
+          set_hl('Comment', palette.grey0, palette.none, 'italic')
+          set_hl('LspInlayHint', palette.bg5, palette.none, 'italic')
+          set_hl('IndentBlankline', palette.bg5, palette.none)
+          set_hl('Special', palette.blue, palette.none)
+          set_hl('Pmenu', palette.fg1, palette.bg1)
+          set_hl('PmenuSel', palette.fg1, palette.bg3)
+          set_hl('PmenuSbar', palette.none, palette.bg1)
+          set_hl('PmenuThumb', palette.none, palette.bg3)
+          set_hl('NormalFloat', palette.fg1, palette.bg1)
+          set_hl('FloatBorder', palette.grey1, palette.bg1)
+          set_hl('FloatTitle', palette.orange, palette.bg1, 'bold')
+        end
+      })
 
-            call gruvbox_material#highlight('String', l:palette.yellow, l:palette.none)
-            call gruvbox_material#highlight('markdownH1', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('markdownH2', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('markdownH3', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('markdownH4', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('markdownH5', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('markdownH6', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('htmlH1', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('htmlH2', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('htmlH3', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('htmlH4', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('htmlH5', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('htmlH6', l:palette.yellow, l:palette.none, 'bold')
-            call gruvbox_material#highlight('Comment', l:palette.grey0, l:palette.none, 'italic')
-            call gruvbox_material#highlight('LspInlayHint', l:palette.bg5, l:palette.none, 'italic')
-            call gruvbox_material#highlight('IndentBlankline', l:palette.bg5, l:palette.none)
-            call gruvbox_material#highlight('Special', l:palette.blue, l:palette.none)
-            call gruvbox_material#highlight('Pmenu', l:palette.fg1, l:palette.bg1)
-            call gruvbox_material#highlight('PmenuSel', l:palette.fg1, l:palette.bg3)
-            call gruvbox_material#highlight('PmenuSbar', l:palette.none, l:palette.bg1)
-            call gruvbox_material#highlight('PmenuThumb', l:palette.none, l:palette.bg3)
-            call gruvbox_material#highlight('NormalFloat', l:palette.fg1, l:palette.bg1)
-            call gruvbox_material#highlight('FloatBorder', l:palette.grey1, l:palette.bg1)
-            call gruvbox_material#highlight('FloatTitle', l:palette.orange, l:palette.bg1, 'bold')
-        endfunction
-
-        augroup GruvboxMaterialCustom
-            autocmd!
-            autocmd ColorScheme gruvbox-material call s:gruvbox_material_custom()
-        augroup END
-      ]]
       vim.opt.background = 'dark'
       vim.g.gruvbox_material_background = 'hard'
       vim.g.gruvbox_material_foreground = 'material'
