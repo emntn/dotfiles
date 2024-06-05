@@ -41,7 +41,12 @@ https://blog.thenewoil.org/feed/ "Blogs"
 https://michal.sapka.me/index.xml "~Michał Sapka" "Blogs"
 https://www.gurwinder.blog/feed "Blogs"
 https://news.itsfoss.com/latest/rss/ "Blogs"
-https://archlinux.org/feeds/news/ "~Arch news" "Blogs"
+
+"query:=== News ===:tags # \"News\""
+
+https://www.bleepingcomputer.com/feed/ "News"
+https://www.darkreading.com/rss.xml "News"
+https://archlinux.org/feeds/news/ "~Arch news" "News"
 
 "query:=== Companies ===:tags # \"Companies\""
 
@@ -90,3 +95,4 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UC1IdPylqngGiuHFLJqHbG_g "yt
 https://www.youtube.com/feeds/videos.xml?channel_id=UCbvIIQc5Jo9-jIXnkPe03oA "yt"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCSHZKyawb77ixDdsGog4iWA "yt"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "yt"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC6biysICWOJ-C3P4Tyeggzg "yt"

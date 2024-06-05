@@ -35,9 +35,9 @@ reload-threads 100
 datetime-format "%Y-%m-%d"
 
 # Browser behavior
-browser "firefox %u"
+browser "qutebrowser %u"
 bind-key o open-in-browser-and-mark-read
-macro m set browser "setsid -f mpv --really-quiet --no-terminal"; open-in-browser-and-mark-read ; set browser "firefox %u"
-macro n set browser "~/.scripts/yt_download.sh %u"; open-in-browser-and-mark-read ; set browser "firefox %u"
-macro o set browser "w3m %u" ; open-in-browser-and-mark-read; set browser "firefox %u"
+macro m set browser "setsid -f mpv --really-quiet --no-terminal"; open-in-browser-and-mark-read ; set browser "qutebrowser %u"
+macro n set browser "~/.scripts/yt_download.sh %u"; open-in-browser-and-mark-read ; set browser "qutebrowser %u"
+macro o set browser "w3m %u" ; open-in-browser-and-mark-read; set browser "qutebrowser %u"
 

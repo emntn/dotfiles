@@ -4,9 +4,9 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango: JetBrains Mono 10
 
-# Launch firefox on ws1 and terminal on ws2 during startup
-for_window [class="firefox"] move --no-auto-back-and-forth container to workspace $ws1
-exec --no-startup-id i3-msg "workspace 1; exec firefox; workspace 2; exec wezterm"
+# Launch qutebrowser on ws1 and terminal on ws2 during startup
+for_window [class="qutebrowser"] move --no-auto-back-and-forth container to workspace $ws1
+exec --no-startup-id i3-msg "workspace 1; exec qutebrowser; workspace 2; exec wezterm"
 
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -15,7 +15,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id $HOME/.scripts/xidlehook.sh 
 
 # Lock the screen immediately
-bindsym $mod+Shift+q exec i3lock -c 000000 && systemctl suspend
+#bindsym $mod+Shift+q exec i3lock -c 000000 && systemctl suspend
+bindsym $mod+Shift+q exec i3lock -c 000000
 
 # Set desktop background with hsetroot
 #exec --no-startup-id hsetroot -solid "#101010"
@@ -42,10 +43,9 @@ set $right semicolon
 bindsym $mod+Return exec wezterm
 
 # Start applications
-bindsym $mod+b exec firefox
+bindsym $mod+b exec qutebrowser
 bindsym $mod+p exec pcmanfm
 bindsym $mod+c exec code
-bindsym $mod+g exec wezterm -e calc
 bindsym $mod+m exec wezterm -e cmus
 bindsym Print exec flameshot gui
 bindsym $mod+Print exec flameshot screen
@@ -55,6 +55,8 @@ bindsym $mod+q kill
 
 # toggle rofi
 bindsym $mod+space exec rofi -show drun
+bindsym $mod+g exec rofi -show calc -modi calc -no-show-match -no-sort
+bindsym $mod+w exec bwmenu --auto-lock -1
 
 # switch windows with rofi
 #bindsym $mod+Tab exec $HOME/.scripts/window_switcher.sh
