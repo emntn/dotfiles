@@ -27,6 +27,7 @@ return {
           })
         },
         sources = {
+          { name = 'copilot' },
           { name = 'path' },                    -- file paths
           { name = 'nvim_lsp' },                -- from language server
           { name = 'nvim_lsp_signature_help' }, -- display function signatures with current parameter emphasized
