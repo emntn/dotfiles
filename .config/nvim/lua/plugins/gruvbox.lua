@@ -71,5 +71,5 @@ return {
       vim.g.gruvbox_material_float_style = 'dim'
       vim.cmd.colorscheme 'gruvbox-material'
     end,
-  }
+  },
 }

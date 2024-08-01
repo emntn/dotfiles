@@ -59,11 +59,11 @@ vim.opt.swapfile = false
 vim.opt.smartindent = true
 vim.opt.wrap = false
 
--- Ignore casing of normal letters
+-- Ignore casing unless intentionally using capital letters
 vim.opt.ignorecase = true
-
--- Ignore casing when using lowercase letters only
 vim.opt.smartcase = true
+-- Show search & replace in split window
+vim.opt.inccommand = "split"
 
 vim.opt.breakindent = true
 vim.opt.linebreak = true
