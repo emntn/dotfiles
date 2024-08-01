@@ -28,7 +28,7 @@ last_day=$(cal | awk 'NF {DAYS = $NF}; END {print DAYS}')
 mon="## $(date --date="today" +"%a %d-%m-%Y")\n\n"
 tue="## $(date --date="next Tuesday" +"%a %d-%m-%Y")\n\n"
 wed="## $(date --date="next Wednesday" +"%a %d-%m-%Y")\n\n"
-thu="## $(date --date="next Thursday" +"%a %d-%m-%Y")\n\n"
+thu="## $(date --date="next Thursday" +"%a %d-%m-%Y")\n\n- [ ] Water the plants"
 fri="## $(date --date="next Friday" +"%a %d-%m-%Y")\n\n"
 sat="## $(date --date="next Saturday" +"%a %d-%m-%Y")\n\n"
 sun="## $(date --date="next Sunday" +"%a %d-%m-%Y")\n\n- [ ] Weekly journal"

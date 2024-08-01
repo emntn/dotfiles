@@ -11,7 +11,7 @@ xidlehook \
   --not-when-audio \
   --timer 600 \
     'i3lock -c 000000' \
-    '' \
-  --timer 900 \
-    'systemctl suspend' \
     ''
+# --timer 900 \
+#   'systemctl suspend' \
+#   '' \
