@@ -10,6 +10,7 @@ c.content.autoplay = False
 c.content.cookies.accept = "no-3rdparty"
 c.content.geolocation = False
 c.content.blocking.method = "both"
+c.content.pdfjs = False
 
 c.statusbar.show = "always"
 c.statusbar.position = "bottom"
@@ -35,25 +36,24 @@ c.url.searchengines = {
 c.zoom.default = "100%"
 
 c.colors.webpage.preferred_color_scheme = "dark"
-c.colors.webpage.darkmode.enabled = False
+c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.policy.images = "never"
 
 urls = [
-    "wikipedia.org",
-    "utu.fi",
-    "icloud.com",
-    "oikotie.fi",
-    "nettiauto.com",
-    "qutebrowser.org",
-    "ycombinator.com",
-    "kilokalori.net",
-    "nodeweekly.com",
-    "golangweekly.com",
-    "javascriptweekly.com",
-    "pycoders.com",
+    "*://*.dreamhost.com/*",
+    "*://emilnuutinen.com/*",
+    "http://localhost/*",
+    "http://*:*/*",
+    "*://www.foreca.fi/*",
+    "*://discord.com/*",
+    "*://*.spotify.com/*",
+    "*://*.youtube.com/*",
+    "*://*.proton.me/*",
+    "file:///*",
 ]
+
 for url in urls:
-    pattern = f"*://*.{url}/*"
-    config.set("colors.webpage.darkmode.enabled", True, pattern)
+    config.set("colors.webpage.darkmode.enabled", False, url)
 
 c.fonts.default_family = "JetBrains Mono"
 c.fonts.default_size = "10.5pt"

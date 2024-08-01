@@ -7,7 +7,7 @@ c: ConfigContainer = c  # noqa: F821 pylint: disable=E0602,C0103
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
 # Type: List of QtColor, or QtColor
-c.colors.completion.fg = ["#ebdbb2", "#8ec07c", "#fabd2f"]
+c.colors.completion.fg = ["#ebdbb2", "#89b482", "#d8a657"]
 
 # Background color of the completion widget for odd rows.
 # Type: QssColor
@@ -113,7 +113,7 @@ c.colors.downloads.stop.fg = "#101010"
 
 # Color gradient stop for download backgrounds.
 # Type: QtColor
-c.colors.downloads.stop.bg = "#8ec07c"
+c.colors.downloads.stop.bg = "#89b482"
 
 # Foreground color for downloads with errors.
 # Type: QtColor
@@ -190,7 +190,7 @@ c.colors.prompts.border = "1px solid #101010"
 
 # Background color for prompts.
 # Type: QssColor
-c.colors.prompts.bg = "#101010"
+c.colors.prompts.bg = "#282828"
 
 # Background color for the selected item in filename prompts.
 # Type: QssColor
@@ -210,7 +210,7 @@ c.colors.statusbar.insert.fg = "#101010"
 
 # Background color of the statusbar in insert mode.
 # Type: QssColor
-c.colors.statusbar.insert.bg = "#689d6a"
+c.colors.statusbar.insert.bg = "#a9b665"
 
 # Foreground color of the statusbar in passthrough mode.
 # Type: QssColor
@@ -218,7 +218,7 @@ c.colors.statusbar.passthrough.fg = "#101010"
 
 # Background color of the statusbar in passthrough mode.
 # Type: QssColor
-c.colors.statusbar.passthrough.bg = "#458588"
+c.colors.statusbar.passthrough.bg = "#7daea3"
 
 # Foreground color of the statusbar in private browsing mode.
 # Type: QssColor
