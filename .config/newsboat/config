@@ -26,8 +26,8 @@ unbind-key K
 # bind keys - vim style
 bind-key j down
 bind-key k up
-#bind-key ; open
-#bind-key h quit
+bind-key l open
+bind-key h quit
 
 # Other
 auto-reload yes
