@@ -1,0 +1,43 @@
+color background          default    default
+color listnormal          default    default
+color listnormal_unread   color10    default
+color listfocus           color12    default
+color listfocus_unread    color12    default
+color info                color8     default
+color article             default    default
+highlight feedlist "===.*===" color11 default bold
+highlight feedlist ".*0/0.." default default
+
+# highlights
+highlight article "^(Feed|Link):.*$" color3 default
+highlight article "^(Title|Date|Author):.*$" color3 default
+highlight article "https?://[^ ]+" color13 default underline
+highlight article "\\[[0-9]+\\]" color13 default bold
+highlight article "\\[image\\ [0-9]+\\]" color13 default bold
+highlight feedlist "^─.*$" color4 color4 bold
+
+# unbind keys
+#unbind-key ENTER
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+
+# bind keys - vim style
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+
+# Other
+auto-reload yes
+reload-threads 100
+datetime-format "%Y-%m-%d"
+
+# Browser behavior
+browser "qutebrowser %u"
+bind-key o open-in-browser-and-mark-read
+macro m set browser "setsid -f mpv --really-quiet --no-terminal"; open-in-browser-and-mark-read ; set browser "qutebrowser %u"
+macro n set browser "~/.scripts/yt_download.sh %u"; open-in-browser-and-mark-read ; set browser "qutebrowser %u"
+macro o set browser "w3m %u" ; open-in-browser-and-mark-read; set browser "qutebrowser %u"
+
