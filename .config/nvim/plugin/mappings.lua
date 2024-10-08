@@ -31,6 +31,12 @@ imap('<Up>', '<C-o>gk')
 nmap('<Down>', 'gj')
 nmap('<Up>', 'gk')
 
+-- Switch panes
+nmap('<Leader>h', '<c-w>h')
+nmap('<Leader>j', '<c-w>j')
+nmap('<Leader>k', '<c-w>k')
+nmap('<Leader>l', '<c-w>l')
+
 -- Equal panes
 nmap('<Leader>=', '<C-W>=')
 

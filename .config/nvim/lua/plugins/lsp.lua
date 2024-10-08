@@ -41,11 +41,12 @@ return {
 
           local opts = { buffer = ev.buf }
           local builtin = require('telescope.builtin')
-          vim.keymap.set('n', '<leader>de', builtin.lsp_definitions, opts)
-          vim.keymap.set('n', '<leader>im', builtin.lsp_implementations, opts)
-          vim.keymap.set('n', '<leader>dt', builtin.lsp_type_definitions, opts)
-          vim.keymap.set('n', '<leader>di', builtin.diagnostics, opts)
-          vim.keymap.set('n', '<leader>re', builtin.lsp_references, opts)
+          vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, opts)
+          vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, opts)
+          vim.keymap.set('n', '<leader>gi', builtin.lsp_implementations, opts)
+          vim.keymap.set('n', '<leader>gt', builtin.lsp_type_definitions, opts)
+          vim.keymap.set('n', '<leader>gI', builtin.diagnostics, opts)
+          vim.keymap.set('n', '<leader>gr', builtin.lsp_references, opts)
           vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
           vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
           vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
@@ -124,7 +125,7 @@ return {
         }
       }
 
-      lspconfig.tsserver.setup {
+      lspconfig.ts_ls.setup {
         handlers = handlers,
         capabilities = capabilities,
         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },

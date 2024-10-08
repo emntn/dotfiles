@@ -11,6 +11,11 @@ c.content.cookies.accept = "no-3rdparty"
 c.content.geolocation = False
 c.content.blocking.method = "both"
 c.content.pdfjs = False
+c.content.blocking.adblock.lists = [
+    "https://easylist.to/easylist/easylist.txt",
+    "https://easylist.to/easylist/easyprivacy.txt",
+    "https://secure.fanboy.co.nz/fanboy-annoyance.txt",
+]
 
 c.statusbar.show = "always"
 c.statusbar.position = "bottom"
@@ -29,8 +34,8 @@ c.tabs.max_width = 250
 c.url.default_page = "/home/emil/repos/personal/dotfiles/startpage/index.html"
 c.url.start_pages = ["/home/emil/repos/personal/dotfiles/startpage/index.html"]
 c.url.searchengines = {
-    "DEFAULT": "https://www.startpage.com/sp/search?query={}",
-    "ddg": "https://duckduckgo.com/?q={}",
+    "DEFAULT": "https://duckduckgo.com/?q={}",
+    "sp": "https://www.startpage.com/sp/search?query={}",
 }
 
 c.zoom.default = "100%"
@@ -39,7 +44,7 @@ c.colors.webpage.preferred_color_scheme = "dark"
 c.colors.webpage.darkmode.enabled = True
 c.colors.webpage.darkmode.policy.images = "never"
 
-urls = [
+darkmode_urls = [
     "*://*.dreamhost.com/*",
     "*://emilnuutinen.com/*",
     "http://localhost/*",
@@ -48,11 +53,10 @@ urls = [
     "*://discord.com/*",
     "*://*.spotify.com/*",
     "*://*.youtube.com/*",
-    "*://*.proton.me/*",
     "file:///*",
 ]
 
-for url in urls:
+for url in darkmode_urls:
     config.set("colors.webpage.darkmode.enabled", False, url)
 
 c.fonts.default_family = "JetBrains Mono"

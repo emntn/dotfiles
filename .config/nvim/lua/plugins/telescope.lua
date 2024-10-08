@@ -38,8 +38,10 @@ return {
       vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
       vim.keymap.set('n', '<leader>fr', builtin.spell_suggest, {})
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-      vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+      vim.keymap.set('n', '<leader>fw', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+      vim.keymap.set('n', '<leader>fc', builtin.git_commits, {})
+      vim.keymap.set('n', '<leader>fb', builtin.git_commits, {})
     end
   },
   { "nvim-telescope/telescope-fzy-native.nvim" },

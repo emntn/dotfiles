@@ -6,24 +6,24 @@ font pango: JetBrains Mono 10
 
 # Launch qutebrowser on ws1 and terminal on ws2 during startup
 for_window [class="qutebrowser"] move --no-auto-back-and-forth container to workspace $ws1
-exec --no-startup-id i3-msg "workspace 1; exec qutebrowser; workspace 2; exec wezterm"
+exec --no-startup-id i3-msg "workspace 1; exec qutebrowser; workspace 2; exec alacritty"
+
+# Launch Pipewire (Gentoo only)
+exec gentoo-pipewire-launcher &
 
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Lock the screen after inactivity
-exec --no-startup-id $HOME/.scripts/xidlehook.sh 
+exec --no-startup-id sleep 5; $HOME/.scripts/xidlehook.sh
 
 # Lock the screen immediately
-#bindsym $mod+Shift+q exec i3lock -c 000000 && systemctl suspend
 bindsym $mod+Shift+q exec i3lock -c 000000
 
 # Set desktop background with hsetroot
-#exec --no-startup-id hsetroot -solid "#101010"
 exec_always --no-startup-id hsetroot -cover ~/Documents/wallpapers/banner-6k.png
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -40,13 +40,19 @@ set $up l
 set $right semicolon
 
 # start a terminal
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec alacritty
 
 # Start applications
 bindsym $mod+b exec qutebrowser
 bindsym $mod+p exec pcmanfm
 bindsym $mod+c exec code
-bindsym $mod+m exec wezterm -e cmus
+
+# Start terminal apps
+bindsym $mod+o exec alacritty -T ranger -e ranger
+bindsym $mod+m exec alacritty -T gomuks -e gomuks
+bindsym $mod+i exec alacritty -T weechat -e weechat
+
+# Take screenshots
 bindsym Print exec flameshot gui
 bindsym $mod+Print exec flameshot screen
 
@@ -56,7 +62,7 @@ bindsym $mod+q kill
 # toggle rofi
 bindsym $mod+space exec rofi -show drun
 bindsym $mod+g exec rofi -show calc -modi calc -no-show-match -no-sort
-bindsym $mod+w exec bwmenu --auto-lock -1
+bindsym $mod+w exec NODE_OPTIONS="--no-deprecation" ~/.local/bin/bwmenu --auto-lock -1
 
 # switch windows with rofi
 #bindsym $mod+Tab exec $HOME/.scripts/window_switcher.sh
