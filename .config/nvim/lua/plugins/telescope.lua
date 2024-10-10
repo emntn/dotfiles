@@ -41,7 +41,7 @@ return {
       vim.keymap.set('n', '<leader>fw', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
       vim.keymap.set('n', '<leader>fc', builtin.git_commits, {})
-      vim.keymap.set('n', '<leader>fb', builtin.git_commits, {})
+      vim.keymap.set('n', '<leader>fb', builtin.git_bcommits, {})
     end
   },
   { "nvim-telescope/telescope-fzy-native.nvim" },

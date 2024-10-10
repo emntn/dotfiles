@@ -169,9 +169,17 @@ return {
         signs = true,
         update_in_insert = false,
         underline = true,
-        severity_sort = false,
+        severity_sort = true,
         virtual_text = {
-          source = "always", -- Or "if_many"
+          source = "if_many",
+        },
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = "●",
+            [vim.diagnostic.severity.WARN]  = "●",
+            [vim.diagnostic.severity.INFO]  = "●",
+            [vim.diagnostic.severity.HINT]  = "●",
+          },
         },
         float = {
           border = 'none',
