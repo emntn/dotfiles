@@ -80,3 +80,10 @@ vim.cmd([[
 
 -- Make "Y" yank till the end of line
 nmap('Y', 'y$')
+
+-- Toggle inlay hints
+vim.keymap.set("n", '<C-i>',
+  function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end
+)

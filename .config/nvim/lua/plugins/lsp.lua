@@ -33,11 +33,12 @@ return {
             return
           end
 
-          local bufnr = ev.buf
-          local client = vim.lsp.get_client_by_id(ev.data.client_id)
-          require('lsp-inlayhints').on_attach(client, bufnr)
+          --local bufnr = ev.buf
+          --local client = vim.lsp.get_client_by_id(ev.data.client_id)
+          --require('lsp-inlayhints').on_attach(client, bufnr)
           -- Enable built-in inlay hints
           --vim.lsp.inlay_hint.enable(true, { bufnr = bufnr, client = client })
+
 
           local opts = { buffer = ev.buf }
           local builtin = require('telescope.builtin')
@@ -118,7 +119,6 @@ return {
               compositeLiteralFields = true,
               constantValues = true,
               functionTypeParameters = true,
-              -- parameterNames = true ,
               rangeVariableTypes = true,
             }
           },
@@ -137,7 +137,6 @@ return {
               tabSize = 2,
             },
             inlayHints = {
-              -- includeInlayParameterNameHints = 'all',
               includeInlayParameterNameHintsWhenArgumentMatchesName = false,
               includeInlayFunctionParameterTypeHints = true,
               includeInlayVariableTypeHints = true,
@@ -153,7 +152,6 @@ return {
               tabSize = 2,
             },
             inlayHints = {
-              -- includeInlayParameterNameHints = 'all',
               includeInlayParameterNameHintsWhenArgumentMatchesName = false,
               includeInlayFunctionParameterTypeHints = true,
               includeInlayVariableTypeHints = true,
@@ -166,7 +164,6 @@ return {
       }
 
       vim.diagnostic.config({
-        signs = true,
         update_in_insert = false,
         underline = true,
         severity_sort = true,
