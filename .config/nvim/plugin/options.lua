@@ -30,7 +30,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.completeopt = 'menu,menuone,noselect,noinsert'
-vim.opt.signcolumn = 'number'
+vim.opt.signcolumn = 'yes'
 
 -- Enable use of the mouse for all modes
 vim.opt.mouse = 'a'
@@ -57,7 +57,6 @@ vim.opt.writebackup = false
 vim.opt.swapfile = false
 
 vim.opt.smartindent = true
-vim.opt.wrap = false
 
 -- Ignore casing unless intentionally using capital letters
 vim.opt.ignorecase = true
@@ -67,6 +66,7 @@ vim.opt.inccommand = "split"
 
 vim.opt.breakindent = true
 vim.opt.linebreak = true
+vim.opt.wrap = true
 
 -- Show line numbers
 vim.opt.number = true
