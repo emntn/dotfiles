@@ -8,21 +8,6 @@ return {
         ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { width = 80 }),
       }
 
-      require("lsp-inlayhints").setup(
-        {
-          inlay_hints = {
-            parameter_hints = {
-              remove_colon_start = true,
-            },
-            -- type and other hints
-            type_hints = {
-              prefix = "=> ",
-              remove_colon_start = true,
-            },
-          },
-        }
-      )
-
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', {}),
         callback = function(ev)
@@ -32,13 +17,6 @@ return {
           if not (ev.data and ev.data.client_id) then
             return
           end
-
-          --local bufnr = ev.buf
-          --local client = vim.lsp.get_client_by_id(ev.data.client_id)
-          --require('lsp-inlayhints').on_attach(client, bufnr)
-          -- Enable built-in inlay hints
-          --vim.lsp.inlay_hint.enable(true, { bufnr = bufnr, client = client })
-
 
           local opts = { buffer = ev.buf }
           local builtin = require('telescope.builtin')
