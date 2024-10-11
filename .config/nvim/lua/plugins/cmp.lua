@@ -6,6 +6,9 @@ return {
       local cmp = require 'cmp'
 
       cmp.setup({
+        formatting = {
+          format = require("nvim-highlight-colors").format
+        },
         snippet = {
           -- REQUIRED - you must specify a snippet engine
           expand = function(args)
