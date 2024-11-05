@@ -6,9 +6,7 @@ return {
     config = function()
       local actions = require("telescope.actions")
       require("telescope").setup {
-        defaults = require('telescope.themes').get_ivy {
-          layout_config = { height = 0.5 },
-          sorting_strategy = "ascending",
+        defaults = {
           mappings = {
             i = {
               ["<C-l>"] = actions.select_vertical,

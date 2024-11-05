@@ -1,5 +1,5 @@
-vim.opt.colorcolumn = { 75 }
-vim.opt.textwidth = 75
+vim.opt.colorcolumn = { 72 }
+vim.opt.textwidth = 72
 vim.opt.spell = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 0
