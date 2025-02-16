@@ -27,7 +27,7 @@ today=$(date +"%A")
 
 if [ $today == "Monday" ]; then
     if [ -f "$path" ]; then
-        nvim -O $path ~/notes/work/turkunlp/logs/2023/todo.md;
+        nvim -O $path ~/notes/work/turkunlp/logs/$year/todo.md;
     else
         printf "## $mon\n\n\n\n## $tue\n\n\n\n## $wed\n\n\n\n## $thu\n\n\n\n## $fri\n\n\n\n" >> $path;
         nvim -O $path ~/notes/work/turkunlp/logs/$year/todo.md;

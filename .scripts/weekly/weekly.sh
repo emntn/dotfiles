@@ -7,7 +7,7 @@ filename=weekly_w$(date "+%V").md
 filename_last_week=weekly_w$(date --date="last week" "+%V").md
 
 # current year
-year=$(date -d "last monday" "+%Y")
+year=$(date -d "today" "+%Y")
 
 # year last monday (if year changes mid week)
 year_last_monday=$(date -d "last monday" +"%Y")
