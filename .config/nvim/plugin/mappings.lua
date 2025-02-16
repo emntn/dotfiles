@@ -1,24 +1,24 @@
-function map(mode, shortcut, command)
+local function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
 
-function nmap(shortcut, command)
+local function nmap(shortcut, command)
   map('n', shortcut, command)
 end
 
-function imap(shortcut, command)
+local function imap(shortcut, command)
   map('i', shortcut, command)
 end
 
-function vmap(shortcut, command)
+local function vmap(shortcut, command)
   map('v', shortcut, command)
 end
 
-function cmap(shortcut, command)
+local function cmap(shortcut, command)
   map('c', shortcut, command)
 end
 
-function tmap(shortcut, command)
+local function tmap(shortcut, command)
   map('t', shortcut, command)
 end
 
@@ -81,9 +81,18 @@ vim.cmd([[
 -- Make "Y" yank till the end of line
 nmap('Y', 'y$')
 
--- Toggle inlay hints
-vim.keymap.set("n", '<C-i>',
-  function()
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-  end
-)
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local bufnr = args.buf ---@type number
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client.supports_method('textDocument/inlayHint') then
+      vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+      vim.keymap.set('n', '<C-i>', function()
+        vim.lsp.inlay_hint.enable(
+          not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }),
+          { bufnr = bufnr }
+        )
+      end, { buffer = bufnr })
+    end
+  end,
+})
