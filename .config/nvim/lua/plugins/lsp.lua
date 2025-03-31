@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    dependencies = { 'saghen/blink.cmp' },
     config = function()
       -- LSP settings (for overriding per client)
       local handlers = {
@@ -11,9 +12,6 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', {}),
         callback = function(ev)
-          -- Enable completion triggered by <c-x><c-o>
-          vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
           if not (ev.data and ev.data.client_id) then
             return
           end
@@ -26,8 +24,6 @@ return {
           vim.keymap.set('n', '<leader>gt', builtin.lsp_type_definitions, opts)
           vim.keymap.set('n', '<leader>gI', builtin.diagnostics, opts)
           vim.keymap.set('n', '<leader>gr', builtin.lsp_references, opts)
-          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-          vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
           vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
           vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
         end,
@@ -36,7 +32,7 @@ return {
       local lspconfig = require('lspconfig')
 
       -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
       local servers = { 'bashls', 'cssls', 'html', 'lua_ls', 'vimls' }
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
@@ -145,9 +141,7 @@ return {
         update_in_insert = false,
         underline = true,
         severity_sort = true,
-        virtual_text = {
-          source = "if_many",
-        },
+        virtual_text = true,
         signs = {
           text = {
             [vim.diagnostic.severity.ERROR] = "●",
