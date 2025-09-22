@@ -29,19 +29,18 @@ return {
         end,
       })
 
-      local lspconfig = require('lspconfig')
-
-      -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+      -- Enable completion with blink
       local capabilities = require('blink.cmp').get_lsp_capabilities()
+
       local servers = { 'bashls', 'cssls', 'html', 'lua_ls', 'vimls' }
       for _, lsp in ipairs(servers) do
-        lspconfig[lsp].setup {
+        vim.lsp.enable(lsp, {
           handlers = handlers,
           capabilities = capabilities,
-        }
+        })
       end
 
-      lspconfig.pylsp.setup {
+      vim.lsp.config("pylsp", {
         handlers = handlers,
         capabilities = capabilities,
         settings = {
@@ -51,39 +50,24 @@ return {
                 enabled = true,
                 extendSelect = { "I" },
               },
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      })
+      vim.lsp.enable("pylsp")
 
-      lspconfig.clangd.setup {
+      vim.lsp.config("clangd", {
         handlers = handlers,
         capabilities = capabilities,
         settings = {
           InlayHints = {
-            Enabled = true
-          }
-        }
-      }
+            Enabled = true,
+          },
+        },
+      })
+      vim.lsp.enable("clangd")
 
-
-      lspconfig.rust_analyzer.setup {
-        handlers = handlers,
-        capabilities = capabilities,
-        settings = {
-          ["rust-analyzer"] = {
-            checkOnSave = {
-              command = "clippy"
-            },
-            inlayHints = {
-              parameterHints = false,
-            }
-          }
-        }
-      }
-
-
-      lspconfig.gopls.setup {
+      vim.lsp.config("gopls", {
         handlers = handlers,
         capabilities = capabilities,
         settings = {
@@ -94,12 +78,29 @@ return {
               constantValues = true,
               functionTypeParameters = true,
               rangeVariableTypes = true,
-            }
+            },
           },
-        }
-      }
+        },
+      })
+      vim.lsp.enable("gopls")
 
-      lspconfig.ts_ls.setup {
+      vim.lsp.config("rust_analyzer", {
+        handlers = handlers,
+        capabilities = capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            checkOnSave = {
+              command = "clippy",
+            },
+            inlayHints = {
+              parameterHints = false,
+            },
+          },
+        },
+      })
+      vim.lsp.enable("rust_analyzer")
+
+      vim.lsp.config("ts_ls", {
         handlers = handlers,
         capabilities = capabilities,
         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
@@ -135,7 +136,8 @@ return {
             }
           }
         }
-      }
+      })
+      vim.lsp.enable("ts_ls")
 
       vim.diagnostic.config({
         update_in_insert = false,
