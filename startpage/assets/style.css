@@ -1,6 +1,6 @@
 :root {
   --bg: #101010;
-  --fg: #d4be98;
+  --fg: #7c6f64;
 }
 
 html,
@@ -86,7 +86,7 @@ body {
   font-family: monospace;
   font-size: 14px;
   font-weight: normal;
-  line-height: 1.2;
+  line-height: 1.5;
   color: var(--fg);
 }
 
