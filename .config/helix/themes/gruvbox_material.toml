@@ -1,0 +1,155 @@
+"annotation" = { fg = "fg1" }
+
+"attribute" = { fg = "aqua1", modifiers = ["italic"] }
+
+"comment" = { fg = "gray", modifiers = ["italic"] }
+
+"constant" = { fg = "purple1" }
+"constant.character" = { fg = "aqua1" }
+"constant.character.escape" = { fg = "orange1" }
+"constant.macro" = { fg = "aqua1" }
+"constructor" = { fg = "purple1" }
+
+"definition" = { underline = { color = "aqua1" } }
+
+"diagnostic" = { underline = { color = "orange1", style = "curl" } }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+"diagnostic.error" = { fg = "red1", bg = "bg_visual_red" }
+"diagnostic.hint" = { fg = "green1", bg = "bg_visual_green" }
+"diagnostic.info" = { fg = "blue1", bg = "bg_visual_blue" }
+"diagnostic.warning" = { fg = "yellow1", bg = "bg_visual_yellow" }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+
+"error" = { fg = "red1", bg = "bg_visual_red"  }
+"hint" = { fg = "green1", bg = "bg_visual_green" }
+"info" = { fg = "blue1", bg = "bg_visual_blue"  }
+"warning" = { fg = "yellow1", bg = "bg_visual_yellow"  }
+
+"diff.delta" = { fg = "yellow1" }
+"diff.minus" = { fg = "red1" }
+"diff.plus" = { fg = "green1" }
+
+"function" = { fg = "green1" }
+"function.builtin" = { fg = "yellow1" }
+"function.macro" = { fg = "blue1" }
+
+"keyword" = { fg = "red1" }
+"keyword.control.import" = { fg = "red1" }
+
+"label" = { fg = "red1" }
+
+"markup.bold" = { modifiers = ["bold"] }
+"markup.heading" = {fg = "yellow0", modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.text" = "purple1"
+"markup.link.url" = { fg = "blue1", modifiers = ["underlined"] }
+"markup.raw" = "green1"
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.heading.marker" = {fg = "yellow0", modifiers = ["bold"] }
+"markup.list.numbered" = "fg1"
+"markup.list.unnumbered" = "fg1"
+"markup.quote" = "gray"
+
+"module" = { fg = "aqua1" }
+
+"namespace" = { fg = "fg1" }
+
+"operator" = { fg = "orange1" }
+
+"punctuation" = { fg = "gray" }
+
+"special" = { fg = "purple0" }
+
+"string" = { fg = "yellow1" }
+"string.regexp" = { fg = "orange1" }
+"string.special" = { fg = "orange1" }
+"string.symbol" = { fg = "yellow1" }
+
+"tag" = { fg = "aqua1" }
+
+"type" = { fg = "blue1" }
+"type.enum.variant" = { modifiers = ["italic"] }
+
+"ui.background" = { bg = "bg0" }
+"ui.bufferline" = { fg = "fg1", bg = "bg1" }
+"ui.bufferline.active" = { fg = "bg0", bg = "yellow0" }
+"ui.bufferline.background" = { bg = "bg2" }
+
+"ui.cursor" = { fg = "bg1", bg = "bg2" }
+"ui.cursor.insert" = { fg = "bg1", bg = "green0" }
+"ui.cursor.normal" = { fg = "bg1", bg = "gray" }
+"ui.cursor.select" = { fg = "bg1", bg = "blue0" }
+"ui.cursor.match" = { fg = "fg3", bg = "bg3" }
+
+"ui.cursor.primary" = { bg = "fg3", fg = "bg1" }
+"ui.cursor.primary.insert" = { fg = "bg1", bg = "green1" }
+"ui.cursor.primary.normal" = { fg = "bg1", bg = "fg3" }
+"ui.cursor.primary.select" = { fg = "bg1", bg = "blue1" }
+
+"ui.cursorline" = { bg = "bg1" }
+"ui.cursorline.primary" = { bg = "bg1" }
+
+"ui.help" = { bg = "bg1", fg = "fg1" }
+"ui.linenr" = { fg = "bg2" }
+"ui.linenr.selected" = { fg = "fg1" }
+"ui.menu" = { fg = "fg1", bg = "bg1" }
+"ui.menu.selected" = { fg = "bg0", bg = "blue1", modifiers = ["bold"] }
+"ui.popup" = { bg = "bg1" }
+"ui.picker.header.column" = { underline.style = "line" }
+"ui.picker.header.column.active" = { modifiers = ["bold"], underline.style = "line" }
+"ui.selection" = { bg = "bg2" }
+"ui.selection.primary" = { bg = "bg3" }
+
+"ui.statusline" = { fg = "fg1", bg = "bg1" }
+"ui.statusline.inactive" = { fg = "fg4", bg = "bg2" }
+"ui.statusline.insert" = { fg = "bg0", bg = "green1", modifiers = ["bold"] }
+"ui.statusline.normal" = { fg = "bg0", bg = "fg3", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "bg0", bg = "blue1", modifiers = ["bold"] }
+
+"ui.text" = { fg = "fg1" }
+"ui.virtual.inlay-hint" = { fg = "bg2" }
+"ui.virtual.jump-label" = { fg = "purple0", modifiers = ["bold"] }
+"ui.virtual.ruler" = { bg = "bg1" }
+"ui.virtual.whitespace" = "bg2"
+"ui.virtual.wrap" = { fg = "bg2" }
+"ui.window" = { bg = "bg1" }
+
+"variable" = { fg = "fg1" }
+"variable.builtin" = { fg = "orange1", modifiers = ["italic"] }
+"variable.other.member" = { fg = "blue1" }
+"variable.parameter" = { fg = "blue1", modifiers = ["italic"] }
+
+
+[palette]
+bg0 = "#101010"   # main background
+bg1 = "#282828"
+bg2 = "#504945"
+bg3 = "#665c54"
+bg4 = "#7c6f64"
+
+fg0 = "#a89984"
+fg1 = "#d4be98" # main foreground
+fg2 = "#d5c4a1"
+fg3 = "#bdae93"
+fg4 = "#a89984"
+
+gray = "#928374"
+bg_visual_green = '#3b4439'
+bg_visual_red = '#4c3432'
+bg_visual_blue = '#374141'
+bg_visual_yellow = '#4f422e'
+
+red0 = "#ea6962"
+red1 = "#ea6962"
+green0 = "#a0b665"
+green1 = "#a0b665"
+yellow0 = "#d8a657"
+yellow1 = "#d8a657"
+blue0 = "#7daea3"
+blue1 = "#7daea3"
+purple0 = "#d3869b"
+purple1 = "#d3869b"
+aqua0 = "#89b482"
+aqua1 = "#89b482"
+orange0 = "#e78a4e"
+orange1 = "#e78a4e"

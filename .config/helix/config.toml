@@ -1,0 +1,44 @@
+theme = "gruvbox_material"
+
+[editor]
+rulers = [80]
+completion-trigger-len = 1
+completion-replace = true
+color-modes = true
+scrolloff = 0
+gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
+
+[editor.statusline]
+right = ["diagnostics", "selections", "register", "file-encoding","position-percentage", "position"]
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+tabpad = "·"
+
+[editor.indent-guides]
+render = true
+character = "╎"
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true
+
+[editor.lsp]
+display-messages = true
+
+[keys.normal]
+F1 = [":insert-output printf '**[%(%H:%M)T]** \n' -1", "insert_at_line_end"]
+F2 = [":insert-output echo '- [ ] \n'", "insert_at_line_end"]
+F3 = [":insert-output printf '### %(%d-%m-%Y)T \n' -1", "insert_at_line_end"]
+C-h = [":toggle-option lsp.display-inlay-hints"]
+
+[keys.insert]
+F1 = [":insert-output printf '**[%(%H:%M)T]** \n ' -1", "goto_line_end"]
+F2 = [":insert-output echo '- [ ]  '", "goto_line_end"]
+F3 = [":insert-output printf '### %(%d-%m-%Y)T \n ' -1", "goto_line_end"]
