@@ -56,6 +56,9 @@ nmap('<F2>', 'i<C-R>="- [ ] "<CR><C-o>:cal cursor(0,12)<CR>')
 imap('<F3>', '<C-R>=strftime("### %d-%m-%Y")<CR>')
 nmap('<F3>', 'i<C-R>=strftime("### %d-%m-%Y")<CR>')
 
+-- Insert euro sign
+nmap('<Leader>4', 'a€')
+
 -- Toggle todos done/undone
 function ToggleTodo()
   local line = vim.fn.getline('.')
@@ -85,7 +88,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     local bufnr = args.buf ---@type number
     local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client.supports_method('textDocument/inlayHint') then
+    if client:supports_method('textDocument/inlayHint') then
       vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
       vim.keymap.set('n', '<C-i>', function()
         vim.lsp.inlay_hint.enable(

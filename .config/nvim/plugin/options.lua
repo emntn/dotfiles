@@ -18,8 +18,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   callback = function()
     local bufnr = vim.fn.bufnr()
-    local clients = vim.lsp.buf_get_clients(bufnr)
-    if #clients > 0 and clients[1].supports_method("textDocument/formatting") then
+    local clients = vim.lsp.get_clients({ bufnr = bufnr })
+    if #clients > 0 and clients[1]:supports_method("textDocument/formatting") then
       vim.lsp.buf.format()
     end
   end,
@@ -49,7 +49,7 @@ vim.opt.colorcolumn = { 80 }
 
 -- Highlight current line number
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = 'number'
+vim.opt.cursorlineopt = 'both'
 
 -- Turn backup off
 vim.opt.backup = false

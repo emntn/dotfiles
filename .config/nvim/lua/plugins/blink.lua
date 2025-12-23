@@ -4,6 +4,7 @@ return {
     dependencies = { 'rafamadriz/friendly-snippets' },
     version = '1.*',
     opts = {
+      enabled = function() return not vim.tbl_contains({ "text", "markdown" }, vim.bo.filetype) end,
       keymap = {
         preset = 'default',
         ['<Tab>'] = {
@@ -36,6 +37,9 @@ return {
             },
           }
         },
+      },
+      sources = {
+        default = { 'lsp', 'path', 'snippets' },
       },
     },
     opts_extend = { "sources.default" }
