@@ -36,13 +36,28 @@ if [ "$session" = "transport" ]; then
 
   window=4
   tmux new-window -t $session:$window -n 'log'
-  tmux send-keys -t "$session:$window" 'work' C-m
+  tmux send-keys -t "$session:$window" 'work swiftgoo' C-m
 
   tmux a -t "$session:1"
   tmux switch-client -t "$session:1"
   exit 0
 fi
 # --- end transport project ---
+
+# --- gosoft ---
+if [ "$session" = "gosoft" ]; then
+  window=1
+  tmux new-window -t $session:$window
+
+  window=2
+  tmux new-window -t $session:$window -n 'log'
+  tmux send-keys -t "$session:$window" 'work gosoft' C-m
+
+  tmux a -t "$session:1"
+  tmux switch-client -t "$session:1"
+  exit 0
+fi
+# --- end gosoft ---
 
 window=1
 if [ -f "main.go" ]; then
