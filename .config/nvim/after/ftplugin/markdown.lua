@@ -1,3 +1,4 @@
+vim.treesitter.stop()
 vim.opt.colorcolumn = { 72 }
 vim.opt.textwidth = 72
 vim.opt.spell = true
