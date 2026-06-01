@@ -24,14 +24,18 @@ return {
           }
         }
       }
+      local map = function(lhs, rhs, desc)
+        vim.keymap.set('n', lhs, rhs, { desc = desc })
+      end
+
       local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-      vim.keymap.set('n', '<leader>fs', builtin.spell_suggest, {})
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-      vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-      vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-      vim.keymap.set('n', '<leader>fc', builtin.git_bcommits, {})
-      vim.keymap.set('n', '<leader>ft', builtin.builtin, {})
+      map('<leader>ff', builtin.find_files, 'Find Files')
+      map('<leader>fs', builtin.spell_suggest, 'Spell Suggest')
+      map('<leader>fg', builtin.live_grep, 'Live Grep')
+      map('<leader>fb', builtin.buffers, 'Buffers')
+      map('<leader>fh', builtin.help_tags, 'Help Tags')
+      map('<leader>fc', builtin.git_bcommits, 'Buffer Commits')
+      map('<leader>ft', builtin.builtin, 'Telescope Pickers')
 
       require('telescope').load_extension('fzy_native')
       require("telescope").load_extension("ui-select")

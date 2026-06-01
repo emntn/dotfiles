@@ -16,14 +16,23 @@ return {
             return
           end
 
+          local map = function(lhs, rhs, desc)
+            vim.keymap.set('n', lhs, rhs, {
+              buffer = ev.buf,
+              desc = desc,
+            })
+          end
+
           local opts = { buffer = ev.buf }
           local builtin = require('telescope.builtin')
-          vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, opts)
-          vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, opts)
-          vim.keymap.set('n', '<leader>gi', builtin.lsp_implementations, opts)
-          vim.keymap.set('n', '<leader>gt', builtin.lsp_type_definitions, opts)
-          vim.keymap.set('n', '<leader>gI', builtin.diagnostics, opts)
-          vim.keymap.set('n', '<leader>gr', builtin.lsp_references, opts)
+          map('<leader>gd', builtin.lsp_definitions, 'Goto Definition')
+          map('<leader>gD', vim.lsp.buf.declaration, 'Goto Declaration')
+          map('<leader>gi', builtin.lsp_implementations, 'Goto Implementation')
+          map('<leader>gt', builtin.lsp_type_definitions, 'Goto Type Definition')
+          map('<leader>gr', builtin.lsp_references, 'References')
+          map('<leader>gI', builtin.diagnostics, 'Diagnostics')
+          map('<leader>ga', vim.lsp.buf.code_action, 'Code Action')
+          map('<leader>rn', vim.lsp.buf.rename, 'Rename')
           vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
           vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
         end,
