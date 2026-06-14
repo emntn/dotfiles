@@ -1,4 +1,32 @@
 vim.opt.updatetime = 50
+vim.opt.autoread = true
+
+-- Watch the parent directory of an open buffer for changes and update the
+-- buffer if changes are detected
+local dir_watchers = {}
+
+local function watch_buffer(buf)
+  local file = vim.api.nvim_buf_get_name(buf)
+  local dir = vim.fs.dirname(file)
+
+  if dir_watchers[dir] then
+    return
+  end
+
+  local watcher = vim.uv.new_fs_event()
+
+  watcher:start(dir, {}, vim.schedule_wrap(function()
+    vim.cmd("checktime")
+  end))
+
+  dir_watchers[dir] = watcher
+end
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function(args)
+    watch_buffer(args.buf)
+  end,
+})
 
 -- Use system clipboard
 vim.opt.clipboard:append("unnamedplus")
