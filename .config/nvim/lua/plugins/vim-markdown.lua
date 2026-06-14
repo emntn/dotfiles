@@ -15,6 +15,9 @@ return {
       vim.g.vim_markdown_frontmatter = 1
       vim.g.vim_markdown_toml_frontmatter = 1
       vim.g.vim_markdown_json_frontmatter = 1
+      -- Url opening was not working so I'm disabling all key mappings.
+      -- Most work natively in Neovim now.
+      vim.g.vim_markdown_no_default_key_mappings = 1
     end,
   }
 }
