@@ -69,7 +69,7 @@ return {
       vim.g.gruvbox_material_enable_bold = 0
       vim.g.gruvbox_material_disable_terminal_colors = 1
       vim.g.gruvbox_material_float_style = 'dim'
-      vim.cmd.colorscheme 'gruvbox-material'
+      --      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
 }

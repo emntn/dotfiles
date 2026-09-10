@@ -3,12 +3,6 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { 'saghen/blink.cmp' },
     config = function()
-      -- LSP settings (for overriding per client)
-      local handlers = {
-        ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { width = 80 }),
-        ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { width = 80 }),
-      }
-
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', {}),
         callback = function(ev)
@@ -23,7 +17,6 @@ return {
             })
           end
 
-          local opts = { buffer = ev.buf }
           local builtin = require('telescope.builtin')
           map('<leader>gd', builtin.lsp_definitions, 'Goto Definition')
           map('<leader>gD', vim.lsp.buf.declaration, 'Goto Declaration')
@@ -33,24 +26,21 @@ return {
           map('<leader>gI', builtin.diagnostics, 'Diagnostics')
           map('<leader>ga', vim.lsp.buf.code_action, 'Code Action')
           map('<leader>rn', vim.lsp.buf.rename, 'Rename')
-          vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
-          vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+          map('<leader>e', vim.diagnostic.open_float, 'Line Diagnostics')
+          map('<space>q', vim.diagnostic.setloclist, 'Diagnostics List')
         end,
       })
 
       -- Enable completion with blink
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
+      local servers = { "bashls", "cssls", "html", "lua_ls", "vimls", }
 
-      local servers = { 'bashls', 'cssls', 'html', 'lua_ls', 'vimls' }
-      for _, lsp in ipairs(servers) do
-        vim.lsp.enable(lsp, {
-          handlers = handlers,
-          capabilities = capabilities,
-        })
+      for _, server in ipairs(servers) do
+        vim.lsp.config(server, capabilities)
+        vim.lsp.enable(server)
       end
 
       vim.lsp.config("pylsp", {
-        handlers = handlers,
         capabilities = capabilities,
         settings = {
           pylsp = {
@@ -66,7 +56,6 @@ return {
       vim.lsp.enable("pylsp")
 
       vim.lsp.config("clangd", {
-        handlers = handlers,
         capabilities = capabilities,
         settings = {
           InlayHints = {
@@ -77,7 +66,6 @@ return {
       vim.lsp.enable("clangd")
 
       vim.lsp.config("gopls", {
-        handlers = handlers,
         capabilities = capabilities,
         settings = {
           gopls = {
@@ -94,7 +82,6 @@ return {
       vim.lsp.enable("gopls")
 
       vim.lsp.config("rust_analyzer", {
-        handlers = handlers,
         capabilities = capabilities,
         settings = {
           ["rust-analyzer"] = {
@@ -110,7 +97,6 @@ return {
       vim.lsp.enable("rust_analyzer")
 
       vim.lsp.config("ts_ls", {
-        handlers = handlers,
         capabilities = capabilities,
         filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
         settings = {

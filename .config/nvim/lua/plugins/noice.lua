@@ -7,6 +7,19 @@ return {
     },
     config = function()
       require("noice").setup({
+        views = {
+          hover = {
+            size = {
+              max_width = 80,
+            },
+          },
+
+          documentation = {
+            size = {
+              max_width = 80,
+            },
+          },
+        },
         cmdline = {
           format = {
             cmdline = { icon = ">" },

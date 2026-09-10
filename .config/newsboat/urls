@@ -52,12 +52,13 @@ https://evanhahn.com/blog/index.xml "~Evan Hahn" "People"
 https://eugeneyan.com/rss/ "People"
 https://blainsmith.com/rss.xml "~Blain Smith" "People"
 https://neilzone.co.uk/index.xml "~Neil's blog" "People"
+https://magazine.sebastianraschka.com/feed.xml "People"
 
 "query:=== Companies ===:tags # \"Companies\""
 
 https://stripe.dev/feed "~Stripe" "Companies"
 https://fly.io/blog/feed.xml "~Fly.io" "Companies"
-https://blog.cloudflare.com/rss "~Cloudflare" "Companies"
+https://blog.janestreet.com/feed.xml "Companies"
 
 "query:=== Other ===:tags # \"Other\""
 
@@ -68,7 +69,6 @@ https://matrix.org/atom.xml "Other"
 https://blog.rust-lang.org/inside-rust/feed.xml "Other"
 https://blog.rust-lang.org/feed.xml "Other
 https://go.dev/blog/feed.atom "Other"
-https://www.rfc-editor.org/rfcrss.xml "Other"
 
 "query:=== Newsletters ===:tags # \"Newsletters\""
 
@@ -79,9 +79,33 @@ https://pycoders.com/feed/n5RQVSXe "Newsletters"
 http://this-week-in-rust.org/atom.xml "Newsletters"
 https://scientificcomputing.rs/monthly/rss.xml "~Scientific Computing in Rust" "Newsletters"
 https://rss.beehiiv.com/feeds/LyzGmG4pKl.xml "Newsletters"
-https://rss.beehiiv.com/feeds/xgTKUmMmUm.xml "Newsletters"
 
 "query:=== Podcasts ===:tags # \"podcasts\""
 
 http://feeds.libsyn.com/210590/rss "~Herrasmieshakkerit" "podcasts"
 
+"query:=== Youtube ===:tags # \"yt\""
+
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFQWHq9e1hN268yjgYq-0hNw "~QuickyBaby" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFh8f8vssLddD2PbnU3Ag_Bw "~Cleetus McFarland" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXuqSBlHAE6Xw-yeJA0Tunw "~Linux Tech Tips" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2D2CMWXMOVWx7giW1n3LIg "~Andrew Huberman" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHnyfMqiRRG1u-2MsSQLbXA "~Veritasium" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBJycsmduvYEL83R_U4JriQ "~MKBHD" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFzQUP1qoWDoEbmsQxvdjxgQ "~Joe Rogan" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFlkUhTjFbQbtGfS14h9Vw5g "~Martijn Doolard" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSHZKyawb77ixDdsGog4iWA "~Lex Fridman" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFzGLDaTu81nJDtWK10MniGg "~Mike Thurston" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF6biysICWOJ-C3P4Tyeggzg "~Low Level" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF1IdPylqngGiuHFLJqHbG_g "~Finnegan's Garage" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsfu-jdkX2_v2t3_igVQebg "~Vice Grip Garage" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFkZuCxXdE6OUGDEbETcjhPw "~Seth Feroce" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFofJu853kJKpkg4y5a-9YXg "~Foresty Forest" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYO_jab_esuFRV4b17AJtAw "~3Blue1Brown" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3DkFux8Iv-aYnTRWzwaiBA "~Peter McKinnon" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFFLVC_a8re9aV_58GuibCeQ "~David Freiburger" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFfzlCWGWYyIQ0aLC5w48gBQ "~sentdex" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFbvIIQc5Jo9-jIXnkPe03oA "~Matti Haapoja" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULFaYhcUwRBNscFNUKTjgPFiA "~Rust YT" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF6nSFpj9HTCZ5t-N3Rm3-HA "~Vsauce" "yt"
+https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_iD0xppBwwsrM9DegC5cQQ "~Jon Gjengset" "yt"
