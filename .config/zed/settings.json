@@ -1,0 +1,170 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "ssh_connections": [
+    {
+      "host": "10.10.11.1",
+      "username": "emil",
+      "port": 12022,
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/share/new_dev/./"
+          ]
+        }
+      ],
+      "nickname": "Gosoft"
+    },
+    {
+      "host": "10.10.11.1",
+      "username": "emil",
+      "port": 12022,
+      "args": [],
+      "projects": []
+    }
+  ],
+  "restore_on_startup": "launchpad",
+  "git": {
+    "blame": {
+      "show_avatar": true
+    }
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "outline_panel": {
+    "button": true
+  },
+  "window_decorations": "client",
+  "bottom_dock_layout": "contained",
+  "tabs": {
+    "show_diagnostics": "all",
+    "file_icons": false,
+    "git_status": true
+  },
+  "tab_bar": {
+    "show_tab_bar_buttons": true,
+    "show_nav_history_buttons": false,
+    "show": true
+  },
+  "title_bar": {
+    "button_layout": "platform_default",
+    "show_menus": false,
+    "show_user_picture": false,
+    "show_user_menu": false,
+    "show_sign_in": false,
+    "show_onboarding_banner": true,
+    "show_project_items": true,
+    "show_branch_name": true,
+    "show_branch_status_icon": true
+  },
+  "terminal": {
+    "dock": "right",
+    "button": true
+  },
+  "status_bar": {
+    "show_active_file": false,
+    "line_endings_button": false,
+    "cursor_position_button": true,
+    "active_encoding_button": "enabled",
+    "active_language_button": true
+  },
+  "project_panel": {
+    "sort_mode": "directories_first",
+    "hide_root": false,
+    "diagnostic_badges": true,
+    "bold_folder_labels": true,
+    "indent_size": 20.0,
+    "git_status": true,
+    "folder_icons": false,
+    "file_icons": true,
+    "entry_spacing": "standard",
+    "dock": "right",
+    "button": true
+  },
+  "diagnostics": {
+    "button": true,
+    "inline": {
+      "enabled": true
+    }
+  },
+  "semantic_tokens": "off",
+  "middle_click_paste": false,
+  "code_lens": "off",
+  "inlay_hints": {
+    "show_other_hints": true,
+    "show_parameter_hints": false,
+    "show_type_hints": true,
+    "show_value_hints": true,
+    "show_background": false,
+    "enabled": false
+  },
+  "completion_menu_item_kind": "off",
+  "show_whitespaces": "boundary",
+  "ensure_final_newline_on_save": false,
+  "indent_guides": {
+    "background_coloring": "disabled",
+    "coloring": "fixed",
+    "enabled": true
+  },
+  "toolbar": {
+    "code_actions": false,
+    "quick_actions": true,
+    "breadcrumbs": true
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "gutter": {
+    "min_line_number_digits": 4
+  },
+  "auto_signature_help": false,
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "scroll_beyond_last_line": "off",
+  "which_key": {
+    "delay_ms": 100,
+    "enabled": true
+  },
+  "selection_highlight": true,
+  "rounded_selection": false,
+  "current_line_highlight": "all",
+  "cli_default_open_behavior": "new_window",
+  "cursor_shape": "block",
+  "cursor_blink": false,
+  "ui_font_family": "JetBrains Mono",
+  "buffer_line_height": "standard",
+  "buffer_font_family": "JetBrains Mono",
+  "auto_update": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "vim_mode": true,
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "default"
+      },
+      "type": "registry"
+    }
+  },
+  "icon_theme": "Zed (Default)",
+  "ui_font_size": 14.0,
+  "buffer_font_size": 14.0,
+  "theme": "Solarized Dark",
+}
